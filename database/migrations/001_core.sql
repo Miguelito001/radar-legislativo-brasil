@@ -21,7 +21,7 @@ create table if not exists rl_matters (
  external_id text not null,
  kind text not null,
  matter_number text not null,
- matter_year integer not null check (matter_year between 1800 and 2200),
+ matter_year integer not null check (matter_year between 0 and 2200),
  ementa text,
  official_url text not null,
  presentation_at timestamptz,
