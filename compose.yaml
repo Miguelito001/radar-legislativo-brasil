@@ -1,0 +1,38 @@
+# Hospedagem independente. Também funciona sem DATABASE_URL, usando snapshots oficiais.
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      PORT: '3000'
+      DATABASE_URL: ${DATABASE_URL:-}
+    volumes:
+      - legislative_data:/app/data
+  worker:
+    build: .
+    restart: unless-stopped
+    command: ["sh","-c","while true; do node scripts/collect.js && node scripts/ingest.js || echo 'Coleta falhou; dados anteriores preservados'; sleep 7200; done"]
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-}
+      MOVEMENTS_PER_RUN: '18'
+    volumes:
+      - legislative_data:/app/data
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: radar
+      POSTGRES_USER: radar
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Defina POSTGRES_PASSWORD no arquivo .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U radar -d radar"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+volumes:
+  postgres_data:
+  legislative_data:
