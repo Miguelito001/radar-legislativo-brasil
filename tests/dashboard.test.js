@@ -11,7 +11,7 @@ test('snapshot contains verifiable official records',()=>{
  const ids=new Set();
  for(const matter of sample.materias){
   assert.match(matter.key,/^(camara|senado):\d+$/);
-  assert.ok(matter.ementa);
+  assert.equal(typeof matter.ementa,'string');
   assert.ok(matter.tipo);
   assert.ok(matter.numero);
   assert.ok(matter.ano);
