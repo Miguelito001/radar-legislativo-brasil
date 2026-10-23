@@ -13,6 +13,12 @@ module.exports = async function(req,res){
  const numero=str(url.searchParams.get('numero')).trim();
  if(numero && !/^\d{1,7}$/.test(numero))return send(res,400,{error:'Número inválido'});
  const search=str(url.searchParams.get('q')).trim().toLocaleLowerCase('pt-BR').slice(0,120);
+ if(process.env.DATABASE_URL){
+  try{
+   const data=await require('../database/query').searchMatters({fonte,tipo,ano,numero,q:search,pagina:page});
+   if(data.total>0)return send(res,200,data);
+  }catch(e){console.error('Consulta SQL indisponível; tentando fonte oficial:',e.message);}
+ }
  const jobs=[];
  if(fonte!=='senado')jobs.push((async()=>{
   const u=new URL(CAMARA+'/proposicoes');
