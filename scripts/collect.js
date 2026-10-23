@@ -5,6 +5,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {CAMARA,SENADO,normalizeCamara,extractSenado}=require('../api/_lib/client');
 const {findAuthors}=require('../api/_lib/autoria');
+const {archive}=require('./archive');
 
 async function official(url){
  let error;
@@ -93,6 +94,8 @@ async function main(){
   paginacao:{pagina:1,itens:materias.length},
   origens:{camara:camara.length,senado:senado.length}
  };
+ const archived=archive(previous,snapshot,stamped);
+ console.log('Observações incrementais arquivadas: '+archived.count);
  writeJson(path.join(folder,'latest.json'),snapshot);
  if(ok.votacoes?.length){writeJson(path.join(folder,'votacoes.json'),{consultadoEm:stamped,origem:'camara',escopo:'Amostra das votações retornadas pela Câmara dos Deputados.',votacoes:ok.votacoes});}
  if(ok.agenda?.length){writeJson(path.join(folder,'agenda.json'),{consultadoEm:stamped,origem:'camara',escopo:'Amostra de eventos retornados pela Câmara dos Deputados.',eventos:ok.agenda});}
