@@ -5,6 +5,12 @@ module.exports = async function(req,res){
  const origem=url.searchParams.get('origem');const id=url.searchParams.get('id');
  if(!['camara','senado'].includes(origem)||!/^\d{1,12}$/.test(id||''))return send(res,400,{error:'Identificação inválida'});
  try {
+  if(process.env.DATABASE_URL){
+   try{
+    const data=await require('../database/query').matterDetails(origem,id);
+    if(data)return send(res,200,data);
+   }catch(e){console.error('Histórico SQL não disponível; tentando fonte oficial:',e.message);}
+  }
   if(origem==='camara'){
    const base=CAMARA+'/proposicoes/'+id;
    const responses=await Promise.allSettled([getJson(base),getJson(base+'/tramitacoes'),getJson(base+'/votacoes?ordem=DESC&ordenarPor=dataHoraRegistro')]);
