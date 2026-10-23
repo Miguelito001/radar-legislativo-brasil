@@ -52,7 +52,17 @@ jobs:
             git commit -m "data: refresh official Câmara and Senado snapshots [skip ci]"
             for attempt in 1 2 3; do
               git fetch origin main
-              git rebase origin/main
+              if ! git merge-base --is-ancestor origin/main HEAD; then
+                echo "Código e dados alterados remotamente: reconstruindo coleta sobre a versão nova."
+                git reset --hard origin/main
+                node scripts/collect.js
+                git add data/latest.json data/votacoes.json data/agenda.json data/archive/
+                if git diff --cached --quiet; then
+                  echo "Versão remota já está atualizada."
+                  exit 0
+                fi
+                git commit -m "data: refresh official Câmara and Senado snapshots [skip ci]"
+              fi
               if git push origin HEAD:main; then
                 echo "Amostras e histórico publicados no main."
                 exit 0
