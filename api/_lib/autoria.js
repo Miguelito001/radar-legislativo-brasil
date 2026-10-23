@@ -32,7 +32,7 @@ function senadoAuthors(payload){
 }
 async function findAuthors(origem,id){
  if(origem==='camara'){
-  const data=await getJson(CAMARA+'/proposicoes/'+id+'/autores?itens=100');
+  const data=await getJson(CAMARA+'/proposicoes/'+id+'/autores');
   return camaraAuthors(data);
  }
  const data=await getJson(SENADO+'/materia/autoria/'+id+'.json');
