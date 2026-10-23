@@ -1,0 +1,20 @@
+name: Validar base técnica
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verificar versão do Node
+        run: node --version
+      - name: Validar sintaxe
+        run: npm run check
+      - name: Executar testes
+        run: npm test
