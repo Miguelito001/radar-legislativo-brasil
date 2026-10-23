@@ -43,7 +43,7 @@ function authorText(result){
 function paintAuthors(key){
  const result=authorCache.get(key);
  if(!result)return;
- for(const el of $('[data-author-key]'))if(el.dataset.authorKey===key){
+ for(const el of $$('[data-author-key]'))if(el.dataset.authorKey===key){
   el.textContent=authorText(result);
   el.title=result.autores?.length>3?result.autores.map(a=>a.nome).join(', '):'';
   el.classList.remove('author-pending');
@@ -66,7 +66,7 @@ function drainAuthors(){
  }
 }
 function hydrateAuthors(){
- for(const el of $('[data-author-key]')){
+ for(const el of $$('[data-author-key]')){
   const key=el.dataset.authorKey;
   if(authorCache.has(key)){paintAuthors(key);continue}
   if(authorObserver)authorObserver.observe(el);else queueAuthor(key);
