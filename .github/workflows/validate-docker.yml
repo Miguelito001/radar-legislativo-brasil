@@ -1,0 +1,33 @@
+name: Validate portable container
+on:
+  push:
+    paths:
+      - 'Dockerfile'
+      - 'compose.yaml'
+      - 'server.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/validate-docker.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Build portable image
+        run: docker build -t radar-legislativo:test .
+      - name: Validate compose manifest
+        run: POSTGRES_PASSWORD=dummy-for-configuration-test docker compose config --quiet
+      - name: Smoke test standalone container
+        run: |
+          docker run -d --rm --name radar-smoke -p 127.0.0.1:18080:3000 radar-legislativo:test
+          trap "docker stop radar-smoke || true" EXIT
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            if curl --fail --silent http://127.0.0.1:18080/api/saude > /tmp/radar-health; then break; fi
+            sleep 1
+          done
+          node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync('/tmp/radar-health'));if(x.state!=='not_configured')process.exit(1)"
+          curl --fail --silent http://127.0.0.1:18080/data/latest.json | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{const j=JSON.parse(s);if(!j.materias||j.materias.length<10)process.exit(1)})"
