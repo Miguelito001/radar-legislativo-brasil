@@ -1,5 +1,6 @@
 'use strict';
 const {connectionString,openPool}=require('./client');
+const {storageStatus}=require('./budget');
 let pool;
 function getPool(){if(!connectionString())return null;if(!pool)pool=openPool();return pool;}
 function normalize(row){
@@ -54,6 +55,7 @@ async function health(){
  if(!p)return {state:'not_configured',database:'PostgreSQL',note:'Falta DATABASE_URL; amostra estática continua ativa'};
  const counts=await p.query("select source,count(*)::int as items,max(last_observed_at) as latest from rl_matters group by source");
  const moves=await p.query('select source,count(*)::int as items from rl_movements group by source');
- return {state:'ok',database:'PostgreSQL',sources:counts.rows,movements:moves.rows,checkedAt:new Date().toISOString()};
+ const storage=await storageStatus(p);
+ return {state:storage.blocked?'read_only_limit':'ok',database:'PostgreSQL',sources:counts.rows,movements:moves.rows,storage,checkedAt:new Date().toISOString()};
 }
 module.exports={getPool,normalize,searchMatters,matterDetails,health};
