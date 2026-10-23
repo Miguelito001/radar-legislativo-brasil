@@ -1,6 +1,6 @@
 {
   "formato": "radar-legislativo-snapshot-v1",
-  "consultadoEm": "2026-10-23T13:15:11.031Z",
+  "consultadoEm": "2026-10-23T13:16:48.433Z",
   "escopo": "Amostra das 150 proposições mais recentemente cadastradas na Câmara e de até 400 matérias atualizadas na última semana no Senado. Não corresponde ao acervo completo ou a um feed de movimentações.",
   "fontes": [
     "camara",
@@ -13,6 +13,28 @@
   "falhas": [],
   "materias": [
     {
+      "key": "camara:2648815",
+      "id": "2648815",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "DOC",
+      "numero": "1702",
+      "ano": "2026",
+      "ementa": "Of. nº 678/2026/PS-GSE, que encaminha ao Senado Federal o processado do PDL n. 1.097/2025, para apreciação.",
+      "data": "2026-10-23T10:06",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648815",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648815",
+      "autores": [
+        {
+          "nome": "Carlos Veras",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
       "key": "camara:2648814",
       "id": "2648814",
       "origem": "camara",
@@ -24,7 +46,15 @@
       "data": "2026-10-23T07:39",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648814",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648814"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648814",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648813",
@@ -38,7 +68,15 @@
       "data": "2026-10-23T07:26",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648813",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648813"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648813",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648812",
@@ -52,7 +90,15 @@
       "data": "2026-10-23T07:26",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648812",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648812"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648812",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176058",
@@ -234,7 +280,15 @@
       "data": "2026-10-22T19:57",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648811",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648811"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648811",
+      "autores": [
+        {
+          "nome": "Sâmia Bomfim",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648808",
@@ -248,7 +302,15 @@
       "data": "2026-10-22T18:32",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648808",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648808"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648808",
+      "autores": [
+        {
+          "nome": "Isnaldo Bulhões Jr.",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648807",
@@ -262,7 +324,15 @@
       "data": "2026-10-22T17:17",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648807",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648807"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648807",
+      "autores": [
+        {
+          "nome": "Augusto Coutinho",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648798",
@@ -276,7 +346,15 @@
       "data": "2026-10-22T16:28",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648798",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648798"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648798",
+      "autores": [
+        {
+          "nome": "Cabo Gilberto Silva",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648802",
@@ -290,7 +368,15 @@
       "data": "2026-10-22T14:46",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648802",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648802"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648802",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648801",
@@ -304,7 +390,15 @@
       "data": "2026-10-22T14:46",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648801",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648801"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648801",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648800",
@@ -318,7 +412,15 @@
       "data": "2026-10-22T14:46",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648800",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648800"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648800",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648796",
@@ -332,7 +434,15 @@
       "data": "2026-10-22T14:46",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648796",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648796"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648796",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648795",
@@ -346,7 +456,15 @@
       "data": "2026-10-22T14:46",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648795",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648795"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648795",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648794",
@@ -360,7 +478,15 @@
       "data": "2026-10-22T14:46",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648794",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648794"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648794",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648793",
@@ -374,7 +500,15 @@
       "data": "2026-10-22T14:46",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648793",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648793"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648793",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648799",
@@ -388,7 +522,15 @@
       "data": "2026-10-22T13:48",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648799",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648799"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648799",
+      "autores": [
+        {
+          "nome": "Franciane Bayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648797",
@@ -402,7 +544,15 @@
       "data": "2026-10-22T13:20",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648797",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648797"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648797",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648792",
@@ -416,7 +566,15 @@
       "data": "2026-10-22T13:20",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648792",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648792"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648792",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648791",
@@ -430,7 +588,15 @@
       "data": "2026-10-22T13:20",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648791",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648791"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648791",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648790",
@@ -444,7 +610,15 @@
       "data": "2026-10-22T13:20",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648790",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648790"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648790",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648789",
@@ -458,7 +632,15 @@
       "data": "2026-10-22T13:20",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648789",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648789"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648789",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648788",
@@ -472,7 +654,15 @@
       "data": "2026-10-22T13:20",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648788",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648788"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648788",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648787",
@@ -486,7 +676,15 @@
       "data": "2026-10-22T13:20",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648787",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648787"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648787",
+      "autores": [
+        {
+          "nome": "Gustavo Gayer",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648726",
@@ -500,7 +698,15 @@
       "data": "2026-10-22T12:06",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648726",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648726"
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648726",
+      "autores": [
+        {
+          "nome": "Isnaldo Bulhões Jr.",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648727",
@@ -7413,7 +7619,7 @@
   ],
   "paginacao": {
     "pagina": 1,
-    "itens": 549
+    "itens": 550
   },
   "origens": {
     "camara": 150,
