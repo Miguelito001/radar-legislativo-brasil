@@ -1,7 +1,7 @@
 'use strict';
 const crypto=require('node:crypto');
 const {CAMARA,SENADO,getJson,normalizeCamara,extractSenado}=require('./_lib/client');
-const {openPool,saveMatters}=require('../database/client');
+const {openPool,migrate,saveMatters}=require('../database/client');
 function reply(res,status,obj){
  res.statusCode=status;
  res.setHeader('Content-Type','application/json; charset=utf-8');
@@ -45,6 +45,7 @@ async function persistCollected(batches,pool){
  if(!successful.length)throw Error('Nenhuma fonte oficial devolveu registros nesta consulta.');
  const client=await pool.connect();
  try{
+  await migrate(client);
   await client.query('BEGIN');
   const output=[];
   for(const batch of successful){

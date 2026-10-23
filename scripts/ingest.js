@@ -44,4 +44,5 @@ async function ingest(){
   }finally{client.release();}
  }finally{await pool.end();}
 }
-ingest().catch(e=>{console.error('Importação SQL interrompida:',e.message);process.exitCode=1});
+if(require.main===module)ingest().catch(e=>{console.error('Importação SQL interrompida:',e.message);process.exitCode=1});
+module.exports={ingest};
