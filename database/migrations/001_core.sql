@@ -47,7 +47,9 @@ create table if not exists rl_observations (
  fingerprint text not null check(length(fingerprint)=64),
  observed_at timestamptz not null default now(),
  snapshot jsonb not null,
- unique (source,external_id,fingerprint),
+ -- Consecutive observations with the same hash are suppressed by the importer,
+ -- but a later reversion to an old hash must create a new observation.
+
  foreign key(source,external_id) references rl_matters(source,external_id)
 );
 create index if not exists rl_observations_date_idx on rl_observations(observed_at desc);
@@ -57,7 +59,7 @@ create table if not exists rl_movements (
  source text not null,
  external_id text not null,
  official_key text not null,
- occured_at timestamptz,
+ occurred_at timestamptz,
  office text,
  official_description text not null,
  official_dispatch text,
@@ -66,7 +68,7 @@ create table if not exists rl_movements (
  primary key(source,external_id,official_key),
  foreign key(source,external_id) references rl_matters(source,external_id)
 );
-create index if not exists rl_movements_date_idx on rl_movements(occured_at desc);
+create index if not exists rl_movements_date_idx on rl_movements(occurred_at desc);
 
 create table if not exists rl_votings (
  source text not null references rl_sources(id),
