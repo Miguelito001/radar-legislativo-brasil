@@ -7,14 +7,13 @@ permissions:
   contents: read
 jobs:
   incremental-history:
-    env:
-      HAS_DB: ${{ secrets.DATABASE_URL != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     concurrency:
       group: radar-postgres-backfill
       cancel-in-progress: false
     env:
+      HAS_DB: ${{ secrets.DATABASE_URL != '' }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
       BACKFILL_MIN_YEAR: '2023'
       BACKFILL_PAGES_PER_RUN: '6'
