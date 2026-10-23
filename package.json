@@ -1,11 +1,11 @@
 {
   "name": "radar-legislativo-brasil",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "description": "Consulta neutra de registros legislativos oficiais brasileiros",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "check": "node --check app.js && node --check scripts/collect.js && node --check scripts/archive.js && node --check scripts/ingest.js && node --check database/client.js && node --check api/materias.js && node --check api/materia.js && node --check api/autores.js && node --check glossary.js && node --check database/query.js && node --check server.js && node --check scripts/backfill-camara.js",
+    "check": "node --check app.js && node --check scripts/collect.js && node --check scripts/archive.js && node --check scripts/ingest.js && node --check database/client.js && node --check api/materias.js && node --check api/materia.js && node --check api/autores.js && node --check glossary.js && node --check database/query.js && node --check server.js && node --check scripts/backfill-camara.js && node --check day.js && node --check api/_lib/daily.js && node --check api/hoje.js",
     "dev": "npx vercel dev",
     "ingest": "node scripts/ingest.js",
     "collect": "node scripts/collect.js",
