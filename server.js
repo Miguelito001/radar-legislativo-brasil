@@ -3,13 +3,11 @@ const http=require('node:http');
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const root=__dirname;
-const allowedApis=new Set(['materias','materia','votacoes','agenda','autores','saude','cron-db']);
+const allowedApis=new Set(['materias','materia','votacoes','agenda','autores','saude','hoje']);
 const staticFiles=new Map([
  ['/','index.html'],['/index.html','index.html'],['/app.js','app.js'],
- ['/glossary.js','glossary.js'],['/styles.css','styles.css'],
- ['/data/latest.json','data/latest.json'],
- ['/data/votacoes.json','data/votacoes.json'],
- ['/data/agenda.json','data/agenda.json']
+ ['/glossary.js','glossary.js'],['/day.js','day.js'],['/styles.css','styles.css'],
+ ['/data/today.json','data/today.json']
 ]);
 function contentType(name){
  if(name.endsWith('.json'))return 'application/json; charset=utf-8';
