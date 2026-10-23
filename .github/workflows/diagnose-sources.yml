@@ -22,7 +22,10 @@ jobs:
             ['camara-simple','https://dadosabertos.camara.leg.br/api/v2/proposicoes?itens=5'],
             ['camara-votes','https://dadosabertos.camara.leg.br/api/v2/votacoes?itens=5&pagina=1&ordem=DESC&ordenarPor=dataHoraRegistro'],
             ['senado-updated','https://legis.senado.leg.br/dadosabertos/materia/atualizadas.json?numdias=3'],
-            ['senado-ongoing','https://legis.senado.leg.br/dadosabertos/materia/tramitando.json']
+            ['senado-ongoing','https://legis.senado.leg.br/dadosabertos/materia/tramitando.json'],
+            ['camara-author-plain','https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648814/autores'],
+            ['camara-author-items','https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648814/autores?itens=100'],
+            ['senado-author','https://legis.senado.leg.br/dadosabertos/materia/autoria/176058.json']
           ];
           for(const [name,url] of urls){
             try{
