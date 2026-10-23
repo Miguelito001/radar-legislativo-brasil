@@ -21,7 +21,7 @@ function officialState(m){
  const kind=String(m.tipo||'').trim();
  const number=String(m.numero||'').trim();
  const year=Number(m.ano);
- if(!kind||!number||!Number.isInteger(year)||year<1800||year>2200)throw Error('Identificação legislativa incompleta');
+ if(!kind||!number||!Number.isInteger(year)||year<0||year>2200)throw Error('Identificação legislativa incompleta');
  const official_url=String(m.url||'');
  if(!/^https:\/\//.test(official_url))throw Error('URL oficial ausente');
  return {source,id,kind,number,year,ementa:String(m.ementa||''),official_url,
