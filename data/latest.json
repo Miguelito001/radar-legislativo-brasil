@@ -1,6 +1,6 @@
 {
   "formato": "radar-legislativo-snapshot-v1",
-  "consultadoEm": "2026-10-23T14:04:19.588Z",
+  "consultadoEm": "2026-10-23T16:19:10.377Z",
   "escopo": "Amostra das 150 proposições mais recentemente cadastradas na Câmara e de até 400 matérias atualizadas na última semana no Senado. Não corresponde ao acervo completo ou a um feed de movimentações.",
   "fontes": [
     "camara",
@@ -28,6 +28,50 @@
       "autores": [
         {
           "nome": "Carlos Veras",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "camara:2648817",
+      "id": "2648817",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "REQ",
+      "numero": "355",
+      "ano": "2026",
+      "ementa": "Requer a convocação do Ministro de Estado da Justiça e Segurança Pública para prestar esclarecimentos sobre as declarações proferidas pelo Presidente da República, Luiz Inácio Lula da Silva, durante debate eleitoral transmitido pela TV Bandeirantes, acerca do avanço de investigações pela Polícia Federal contra o candidato à Presidência da República Flávio Bolsonaro após o processo eleitoral, e sobre as medidas adotadas para assegurar a autonomia funcional, a imparcialidade e a ausência de utilização político-eleitoral da Polícia Federal.",
+      "data": "2026-10-23T10:00",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648817",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648817",
+      "autores": [
+        {
+          "nome": "Sanderson",
+          "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "camara:2648816",
+      "id": "2648816",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "REQ",
+      "numero": "354",
+      "ano": "2026",
+      "ementa": "Requer o convite da Sra. Roberta Luchsinger para comparecer à Comissão de Segurança Pública e Combate ao Crime Organizado, a fim de prestar esclarecimentos sobre declarações públicas relativas a supostas ameaças de morte, coação e tentativas de silenciamento que afirma estar sofrendo, bem como sobre fatos relacionados às investigações envolvendo o empresário Fábio Luís Lula da Silva, conhecido como “Lulinha”.",
+      "data": "2026-10-23T09:52",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648816",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648816",
+      "autores": [
+        {
+          "nome": "Sanderson",
           "tipo": "Deputado(a)",
           "partido": "",
           "uf": ""
@@ -97,6 +141,69 @@
           "tipo": "Deputado(a)",
           "partido": "",
           "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176068",
+      "id": "176068",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "01098",
+      "ano": "2025",
+      "ementa": "Aprova o ato que renova a permissão outorgada ao Sistema 98 de Comunicação Ltda. para explorar serviço de radiodifusão sonora em frequência modulada no Município de Presidente Prudente, Estado de São Paulo.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176068",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176067",
+      "id": "176067",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "01134",
+      "ano": "2025",
+      "ementa": "Aprova o ato que renova a concessão outorgada ao Sistema Athenas Paulista de Radiodifusão Ltda. para explorar serviço de radiodifusão sonora em onda média, posteriormente adaptado para o serviço de radiodifusão sonora em frequência modulada, no Município de Jaboticabal, Estado de São Paulo.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176067",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176066",
+      "id": "176066",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "REQ",
+      "numero": "00365",
+      "ano": "2026",
+      "ementa": "Requer licença para desempenhar missão oficial, a fim de ser condecorado com a grande medalha de ouro da société d´Encouragement au Progrès, em Paris, França.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176066",
+      "autores": [
+        {
+          "nome": "Astronauta Marcos Pontes",
+          "tipo": "Senador",
+          "partido": "PL",
+          "uf": "SP"
         }
       ]
     },
@@ -2784,34 +2891,6 @@
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648669",
       "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648669"
-    },
-    {
-      "key": "camara:2648667",
-      "id": "2648667",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "PRL",
-      "numero": "1",
-      "ano": "0",
-      "ementa": "Parecer da Relatora, Dep. Franciane Bayer (REPUBLIC-RS), pela aprovação.",
-      "data": "2026-10-21T13:07",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648667",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648667"
-    },
-    {
-      "key": "camara:2648666",
-      "id": "2648666",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "PRL",
-      "numero": "1",
-      "ano": "0",
-      "ementa": "Parecer da Relatora, Dep. Franciane Bayer (REPUBLIC-RS), pela aprovação.",
-      "data": "2026-10-21T13:07",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648666",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648666"
     },
     {
       "key": "camara:2648810",
@@ -7632,45 +7711,6 @@
       "data": "2023-10-09",
       "situacao": "",
       "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/160400"
-    },
-    {
-      "key": "senado:160056",
-      "id": "160056",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00372",
-      "ano": "2021",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação Comunitária Cultural de Tanque Novo para executar serviço de radiodifusão comunitária no Município de Tanque Novo, Estado da Bahia.",
-      "data": "2023-09-20",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/160056"
-    },
-    {
-      "key": "senado:159947",
-      "id": "159947",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "MPV",
-      "numero": "01187",
-      "ano": "2023",
-      "ementa": "Altera a Lei nº 14.600, de 19 de junho de 2023, para criar o Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte.",
-      "data": "2023-09-13",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159947"
-    },
-    {
-      "key": "senado:159826",
-      "id": "159826",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00967",
-      "ano": "2021",
-      "ementa": "Aprova o ato que renova a autorização outorgada ao Centro Social José Paulino para executar serviço de radiodifusão comunitária no Município de Jaçanã, Estado do Rio Grande do Norte.",
-      "data": "2023-09-06",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159826"
     }
   ],
   "paginacao": {
