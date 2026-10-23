@@ -18,6 +18,6 @@ test('servidor independente entrega interface e snapshots sem expor arquivos int
   const status=await fetch(host+'/api/saude');
   assert.equal(status.status,200);
   const data=await status.json();
-  assert.equal(data.state,'not_configured');
+  assert.equal(data.state,'daily_only');
  }finally{await new Promise(resolve=>server.close(resolve));}
 });
