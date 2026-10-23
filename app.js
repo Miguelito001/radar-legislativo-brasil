@@ -8,7 +8,7 @@ const glossary=globalThis.RadarGlossary;
 const day=globalThis.RadarDay;
 const today=()=>day.todayKey();
 const state={page:'radar',source:'todas',type:'',q:'',pagina:1,materias:[],votacoes:[],eventos:[],fontes:[],falhas:[],last:null,votesLoaded:false,agendaLoaded:false,requestSeq:0,daily:null,snapshotUsed:false,total:0,totals:{camara:0,senado:0},shownDay:today()};
-function date(v){if(!v)return 'Data não informada';const iso=/^\d{4}-\d{2}-\d{2}$/.test(v)?v+'T12:00:00':v;const d=new Date(iso);return isNaN(d)?String(v).slice(0,10):new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric'}).format(d)}
+function date(v){const key=day.dateKey(v);if(!key)return 'Data não informada';const d=new Date(key+'T12:00:00Z');return new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}).format(d)}
 function time(v){if(!v)return '—';const d=new Date(v);return isNaN(d)?'—':new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).format(d)}
 function official(p){return p.origem==='camara'?`https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=${encodeURIComponent(p.id)}`:`https://www25.senado.leg.br/web/atividade/materias/-/materia/${encodeURIComponent(p.id)}`}
 function empty(title,desc,error=false){return `<div class="empty-state"><div>${svg(error?'info':'search')}</div><h3>${esc(title)}</h3><p>${esc(desc)}</p>${error?'<button class="quiet-btn" data-retry="1" type="button">Tentar novamente</button>':''}</div>`}
