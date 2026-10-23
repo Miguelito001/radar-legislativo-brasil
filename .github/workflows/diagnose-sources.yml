@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Check upstream APIs
         shell: bash
         run: |
@@ -29,7 +30,11 @@ jobs:
               const contentType=response.headers.get('content-type');
               const data=await response.text();
               let j;try{j=JSON.parse(data)}catch{}
-              console.log(JSON.stringify({name,status:response.status,ms:Date.now()-started,contentType,length:data.length,topKeys:Object.keys(j||{}).slice(0,12),sample:data.slice(0,160)}));
+              const normalized=name==='senado-updated'?require('./api/_lib/client').extractSenado(j):[];
+              let example=null; if(name==='senado-updated'){
+                const x=j?.ListaMateriasAtualizadas; example={innerKeys:Object.keys(x||{}),matterCollectionKeys:Object.keys(x?.Materias||x?.Materia||x?.MateriasAtualizadas||{}).slice(0,12),one:JSON.stringify(x?.Materias||x?.Materia||x?.MateriasAtualizadas||{}).slice(0,600)};
+              }
+              console.log(JSON.stringify({name,status:response.status,ms:Date.now()-started,contentType,length:data.length,topKeys:Object.keys(j||{}).slice(0,12),normalizedCount:normalized.length,normalizedSample:normalized[0]||null,example,sample:data.slice(0,160)}));
             }catch(e){console.log(JSON.stringify({name,error:e.message,cause:e.cause?.message||null}));}
           }
           NODE
