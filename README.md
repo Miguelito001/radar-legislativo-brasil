@@ -1,63 +1,76 @@
-# Radar Legislativo Brasil — base executável (0.2)
+# Radar Legislativo Brasil
 
-Plataforma independente para consulta documental, **sem posicionamento editorial**. Neste primeiro pacote, o frontend acessa rotas que consultam APIs oficiais no momento do pedido. **Não há persistência histórica nem worker agendado ativo:** portanto isto ainda não é o rastreador completo planejado, nem há garantia de tempo real.
+**Vitrine pública de dados legislativos federais. Sem opinião editorial.**
+
+O site apresenta registros oficiais da Câmara dos Deputados e do Senado Federal, com autoria, glossário e links de origem. O **Congresso Nacional, o histórico federal integral e a correlação entre as Casas ainda não estão cobertos integralmente**. Informações de acervo parcial devem ser identificadas como tal.
+
+## Situação técnica
+
+- **Site:** JavaScript sem framework obrigatório, hospedado na Vercel.
+- **Coleta:** `scripts/collect.js`, com GitHub Actions a cada duas horas (execução sujeita aos limites e atrasos da plataforma).
+- **Fallback:** `data/latest.json`, `data/votacoes.json` e `data/agenda.json` contêm registros de amostra oficiais, preservados no GitHub e publicados no site.
+- **Proveniência:** `data/archive/AAAA/MM/DD.ndjson` armazena mudanças observadas e detectadas pelo coletor. **Uma mudança na amostra não significa que houve votação, aprovação ou tramitação.**
+- **Banco principal previsto:** PostgreSQL 14+, migração em `database/migrations/001_core.sql`. Importação idempotente pronta, mas **só ativa após configurar `DATABASE_URL`**.
+- **Histórico SQL:** `rl_matters` (identidade por fonte), `rl_observations` (mudança vista), `rl_movements` (atos oficiais), `rl_votings`, `rl_cursors` (continuação da importação).
+- **Backfill:** `scripts/backfill-camara.js` importa páginas históricas com cursor retomável, inicialmente a partir de 2023 até o ano corrente.
+- **Portabilidade:** `server.js` funciona com Node.js sem Vercel; `Dockerfile` e `compose.yaml` permitem hospedagem independente com worker e PostgreSQL.
 
 ## Executar
 
-- Node.js 20+
-- `npm run test` e `npm run check`: verificações locais sem instalação.
-- `npx vercel dev`: executar frontend e funções `api/*.js` localmente (requer Vercel CLI/autenticação).
-- Implantar na Vercel como projeto Other/sem framework usando `vercel.json`.
+Instale Node.js 24+. Use `npm ci` para reproduzir as dependências do `package-lock.json`.
+
+```sh
+npm ci
+npm test
+npm run check
+npm start
+```
+
+Abra `http://localhost:3000`. O servidor não expõe arquivos de configuração, scripts de coleta ou módulos internos.
+
+Para infraestrutura própria, configure credenciais no `.env` (a partir de `.env.example`) e rode `docker compose up --build -d`. **Não versione .env ou dumps de banco**. O worker Docker compartilha o volume `legislative_data` com o site.
+
+## PostgreSQL
+
+Use uma instância PostgreSQL padrão, gerenciada ou própria. O provedor pode ser substituído com `pg_dump` e `pg_restore`, sem conversão de dados proprietária.
+
+Defina `DATABASE_URL`:
+
+- No GitHub Actions, em **Settings → Secrets and variables → Actions**, para as rotinas de importação;
+- Na Vercel, como variável de ambiente de servidor para as consultas SQL;
+- Na hospedagem independente, no ambiente do container.
+
+Depois, rode `npm run ingest`. O importador realiza a migração inicial, importa a amostra, votações e um lote limitado de tramitações da Câmara. **Não apaga dados anteriores**. A importação histórica é separada, com limites e cursor.
+
+Para diagnóstico consulte `/api/saude` (apenas métricas operacionais, nunca credenciais).
+
+## Segurança e preservação
+
+1. Não misturar identidades oficiais só porque a ementa se parece.
+2. Não publicar resultados inferidos como se fossem decisões oficiais.
+3. Distinguir momento do ato jurídico de momento da consulta.
+4. Manter backup PostgreSQL periódico, criptografado e **fora do fornecedor que hospeda o banco**, com testes de restauração.
+5. Monitorar crescimento dos arquivos versionados: GitHub não é substituto indefinido para armazenamento de objetos ou banco de dados.
+6. O agendamento GitHub Actions pode atrasar e pode ser desativado por inatividade; para serviço crítico, manter executor independente.
+7. Limites do provedor gratuito não são garantia de retenção ilimitada. A arquitetura é portátil justamente para permitir expansão.
 
 ## Rotas
 
-- `/api/materias?fonte=todas&tipo=PEC&ano=2026&pagina=1`: busca lote de proposições; filtre também por `numero`.
-- `/api/materias?q=...`: filtro `keywords` da Câmara e filtro textual sobre o lote do Senado; não é busca integral do acervo nas três instituições.
-- `/api/materia?origem=camara&id=123456`: dados e tramitações de matéria da Câmara.
-- `/api/materia?origem=senado&id=123456`: dados básicos normalizados do Senado (tramitações pendentes).
-- `/api/votacoes`: consulta direta à Câmara (não cobre Senado/Congresso neste pacote).
-- `/api/agenda`: eventos da Câmara (não cobre Senado/Congresso neste pacote).
-- `/api/autores?origem=camara&id=123456`: consulta autoria da Câmara por identificador oficial; aceita `origem=senado` para a rota oficial de autoria do Senado.
+- `/api/materias?fonte=todas&tipo=PEC&ano=2026&pagina=1`: resultado do PostgreSQL, se disponível e populado; caso contrário, consulta oficial direta.
+- `/api/materia?origem=camara&id=123456`: dados e movimentações recuperáveis.
+- `/api/autores?origem=camara&id=123456`: autoria oficial (também suporta `senado`).
+- `/api/votacoes`: amostra de votações da Câmara.
+- `/api/agenda`: amostra da agenda da Câmara.
+- `/api/saude`: estado da conexão ao armazenamento SQL.
 
-## Glossário e identificação de autores
+## Testes
 
-- `glossary.js` mantém um glossário descritivo e rastreável a referências oficiais, pesquisável pelo menu **Glossário legislativo**.
-- Siglas de matérias têm nome por extenso, descrição acessível por mouse/foco/toque e explicação em linguagem objetiva.
-- Cartões e detalhes consultam os autores oficiais sob demanda (com carregamento limitado a três consultas simultâneas), sem inferir identidade quando a fonte não retornar dados.
-- O glossário **não classifica nem avalia posições políticas**, apenas descreve espécies documentais e procedimentos.
-- A consulta de autoria da Câmara utiliza `GET /proposicoes/{id}/autores`; a do Senado utiliza `GET /materia/autoria/{id}.json`. Respostas incompletas são sinalizadas.
+`npm test` cobre normalização, segurança, integridade do acervo parcial, filtros, histórico incremental, portabilidade do servidor e contingência offline. A integração de PostgreSQL é testada no GitHub Actions usando uma instância real descartável.
 
-## Escopo funcional previsto para o lançamento oficial
-
-Todos os tipos de matérias federais, Câmara, Senado e Congresso, importação histórica, vínculo entre Casas, pesquisa completa indexada, linha do tempo de alterações, autoria, textos, deliberações, vetos por dispositivo, tarefas agendadas, banco e painel de confiabilidade das fontes. O arquivo `docs/schema.sql` é um esboço para a implementação do coletor persistente — **não é migração de produção**.
-
-## Critérios editoriais
-
-1. Não editorializar propostas ou pessoas.
-2. Não inventar contagens, votações ou atualizações.
-3. Não inferir que uma votação equivale a uma lei aprovada.
-4. Mostrar indisponibilidade em vez de dados simulados.
-5. Citar o URL oficial da matéria e o horário da consulta.
-
-## Fontes
+## Fontes públicas
 
 - https://dadosabertos.camara.leg.br/swagger/api.html
-- https://www12.senado.leg.br/dados-abertos/legislativo/projetos-e-materias/pesquisa-materias
-- https://legis.senado.leg.br/dadosabertos/docs/index.html
+- https://www12.senado.leg.br/dados-abertos
+- https://www.congressonacional.leg.br/materias
 
-Licença MIT (somente código original deste repositório; dados das fontes sujeitos às regras de origem).
-
-
-## Recuperação de dados e auditoria de sincronização (2026-10-23)
-
-A versão de demonstração foi reforçada após um incidente no qual o painel ficava vazio devido a um erro de inicialização no DOM. A correção também adicionou uma amostra persistida para evitar que falhas de upstream esvaziem a página.
-
-- `scripts/collect.js`: busca proposições recentes da Câmara e matérias atualizadas no Senado, além das votações e da agenda da Câmara.
-- `.github/workflows/sync-legislative-data.yml`: executa a coleta a cada duas horas e publica os últimos arquivos oficiais válidos em `data/`.
-- `data/latest.json`, `data/votacoes.json`, `data/agenda.json`: arquivos de amostra disponíveis estaticamente no site. **Não são um banco histórico completo nem garantem tempo real.**
-- `app.js`: exibe primeiro a amostra válida; depois tenta consultar diretamente as APIs, mesclando registros por identificador oficial. Caso a API falhe, mantém os dados existentes com aviso de consulta parcial.
-- `tests/dashboard.test.js`: verifica, com uma simulação de falha da API, que o painel ainda exibe registros e links oficiais.
-
-**Critério de transparência:** nunca apresentar a quantidade da amostra como total nacional, nem a data de sincronização como data de votação ou tramitação. Registros sem ementa devem ser exibidos sem inventar descrição.
-
-**Limitação atual:** ainda faltam a base PostgreSQL de eventos, a reconciliação completa das duas Casas, o histórico de votações e a integração abrangente do Congresso Nacional. Os arquivos em `data/` são uma camada de disponibilidade da fase técnica inicial, não a arquitetura definitiva.
+**Este projeto não tem vínculo partidário ou institucional.** A licença MIT se aplica ao código de autoria do projeto; conteúdos e dados seguem as regras das fontes originais.
