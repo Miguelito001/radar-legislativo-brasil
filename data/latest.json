@@ -1,6 +1,6 @@
 {
   "formato": "radar-legislativo-snapshot-v1",
-  "consultadoEm": "2026-10-23T13:16:48.433Z",
+  "consultadoEm": "2026-10-23T13:47:45.396Z",
   "escopo": "Amostra das 150 proposições mais recentemente cadastradas na Câmara e de até 400 matérias atualizadas na última semana no Senado. Não corresponde ao acervo completo ou a um feed de movimentações.",
   "fontes": [
     "camara",
@@ -95,6 +95,153 @@
         {
           "nome": "Gustavo Gayer",
           "tipo": "Deputado(a)",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176065",
+      "id": "176065",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "01099",
+      "ano": "2025",
+      "ementa": "Aprova o ato que renova a permissão outorgada à Vitória Comunicação Ltda. para explorar serviço de radiodifusão sonora em frequência modulada no Município de São Gonçalo do Sapucaí, Estado de Minas Gerais.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176065",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176064",
+      "id": "176064",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "01112",
+      "ano": "2025",
+      "ementa": "Aprova o ato que outorga autorização à Associação de Comunicação Comunitária de Alto Bela Vista para executar serviço de radiodifusão comunitária no Município de Alto Bela Vista, Estado de Santa Catarina.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176064",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176063",
+      "id": "176063",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "00157",
+      "ano": "2025",
+      "ementa": "Aprova o ato que renova a permissão outorgada à Radiodifusão Oeste Paulista Ltda. para explorar serviço de radiodifusão sonora em frequência modulada no Município de Dracena, Estado de São Paulo.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176063",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176062",
+      "id": "176062",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "01149",
+      "ano": "2025",
+      "ementa": "Aprova o ato que outorga autorização à Associação Comunitária de Desenvolvimento Cultural Artístico de Feu Rosa na Serra-ES (ACOFEU) para executar serviço de radiodifusão comunitária no Município de Serra, Estado do Espírito Santo.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176062",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176061",
+      "id": "176061",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "00253",
+      "ano": "2025",
+      "ementa": "Aprova o ato que renova a concessão outorgada à Difusoras de Pernambuco Ltda. para explorar serviço de radiodifusão sonora em onda média, posteriormente adaptado para o serviço de radiodifusão sonora em frequência modulada, no Município de Limoeiro, Estado de Pernambuco.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176061",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176060",
+      "id": "176060",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "01150",
+      "ano": "2025",
+      "ementa": "Aprova o ato que outorga autorização à Associação de Difusão Comunitária e Cultural Cristo Rei para executar serviço de radiodifusão comunitária no Município de Guaçuí, Estado do Espírito Santo.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176060",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
+    },
+    {
+      "key": "senado:176059",
+      "id": "176059",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PDL",
+      "numero": "00182",
+      "ano": "2025",
+      "ementa": "Aprova o ato que renova a autorização outorgada à Associação de Difusão Comunitária do Cabo de Santo Agostinho para executar serviço de radiodifusão comunitária no Município de Cabo de Santo Agostinho, Estado de Pernambuco.",
+      "data": "2026-10-23",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176059",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
           "partido": "",
           "uf": ""
         }
@@ -7524,97 +7671,6 @@
       "data": "2023-09-06",
       "situacao": "",
       "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159826"
-    },
-    {
-      "key": "senado:159811",
-      "id": "159811",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00444",
-      "ano": "2022",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação de Desenvolvimento Econômico e Social de Cândido Sales para executar serviço de radiodifusão comunitária no Município de Cândido Sales, Estado da Bahia.",
-      "data": "2023-09-06",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159811"
-    },
-    {
-      "key": "senado:159803",
-      "id": "159803",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00665",
-      "ano": "2021",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação Comunitária Popular de Jaguaruana para executar serviço de radiodifusão comunitária no Município de Jaguaruana, Estado do Ceará.",
-      "data": "2023-09-06",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159803"
-    },
-    {
-      "key": "senado:159800",
-      "id": "159800",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00570",
-      "ano": "2021",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação Comunitária Cultural Aracatiense para executar serviço de radiodifusão comunitária no Município de Aracati, Estado do Ceará.",
-      "data": "2023-09-06",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159800"
-    },
-    {
-      "key": "senado:159726",
-      "id": "159726",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "01088",
-      "ano": "2021",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação Cultural Comunitária de Itainópolis - ACCI para executar serviço de radiodifusão comunitária no Município de Itainópolis, Estado do Piauí.",
-      "data": "2023-09-05",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159726"
-    },
-    {
-      "key": "senado:159631",
-      "id": "159631",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00156",
-      "ano": "2019",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação Comunitária Eldorado para o Desenvolvimento Social Cultural e Artístico de Castro Alves para executar serviço de radiodifusão comunitária no Município de Castro Alves, Estado da Bahia.",
-      "data": "2023-08-30",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159631"
-    },
-    {
-      "key": "senado:159543",
-      "id": "159543",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00418",
-      "ano": "2022",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação Cultural Comunitária de Pedreiras para executar serviço de radiodifusão comunitária no Município de Pedreiras, Estado do Maranhão.",
-      "data": "2023-08-30",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159543"
-    },
-    {
-      "key": "senado:159240",
-      "id": "159240",
-      "origem": "senado",
-      "casa": "Senado",
-      "tipo": "PDL",
-      "numero": "00751",
-      "ano": "2021",
-      "ementa": "Aprova o ato que renova a autorização outorgada à Associação Comunitária Cultural de Tocantins para executar serviço de radiodifusão comunitária no Município de Tocantins, Estado de Minas Gerais.",
-      "data": "2023-08-16",
-      "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/159240"
     }
   ],
   "paginacao": {
