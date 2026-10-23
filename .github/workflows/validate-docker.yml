@@ -30,5 +30,6 @@ jobs:
             if curl --fail --silent http://127.0.0.1:18080/api/saude > /tmp/radar-health; then break; fi
             sleep 1
           done
-          node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync('/tmp/radar-health'));if(x.state!=='not_configured')process.exit(1)"
-          curl --fail --silent http://127.0.0.1:18080/data/latest.json | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{const j=JSON.parse(s);if(!j.materias||j.materias.length<10)process.exit(1)})"
+          node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync('/tmp/radar-health'));if(x.state!=='daily_only')process.exit(1)"
+          curl --fail --silent http://127.0.0.1:18080/day.js | grep -q 'America/Sao_Paulo'
+          curl --fail --silent http://127.0.0.1:18080/ | grep -q 'hoje no Legislativo'
