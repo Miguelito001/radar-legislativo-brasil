@@ -30,8 +30,6 @@ function createServer(){
    }
    if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405);res.end('Method not allowed');return;}
    let filename=staticFiles.get(pathname);
-   if(!filename && /^\/data\/archive\/\d{4}\/\d{2}\/\d{2}\.ndjson$/.test(pathname))
-     filename=pathname.slice(1);
    if(!filename){res.writeHead(404);res.end('Not found');return;}
    // Explicit allowlist above prevents disclosure of credentials, source code and backup files.
    const bytes=await fs.readFile(path.join(root,filename));
