@@ -4,6 +4,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const {CAMARA,SENADO,normalizeCamara,extractSenado}=require('../api/_lib/client');
+const {findAuthors}=require('../api/_lib/autoria');
 
 async function official(url){
  let error;
@@ -67,6 +68,19 @@ async function main(){
  const senado=ok.senado||existingByOrigin.senado||[];
  const materias=onePerKey([...camara,...senado]).sort((a,b)=>String(b.data||'').localeCompare(String(a.data||''))).slice(0,650);
  if(materias.length<10)throw Error('Snapshot recusado: somente '+materias.length+' registros; os dados anteriores serão preservados.');
+ // Inclui nomes oficiais dos autores sem exigir que a função de API do site responda.
+ const previousAuthors=new Map((previous?.materias||[]).filter(p=>Array.isArray(p.autores)&&p.autores.length).map(p=>[p.key,p.autores]));
+ for(const p of materias)if(previousAuthors.has(p.key))p.autores=previousAuthors.get(p.key);
+ const featured=[...materias.filter(p=>p.origem==='camara').slice(0,24),...materias.filter(p=>p.origem==='senado').slice(0,14)].filter(p=>!p.autores?.length);
+ let cursor=0,foundAuthors=0;
+ await Promise.all(Array.from({length:Math.min(4,featured.length)},async()=>{
+  while(cursor<featured.length){
+   const p=featured[cursor++];
+   try{const authors=await findAuthors(p.origem,p.id);if(authors.length){p.autores=authors;foundAuthors++;}}
+   catch(e){console.warn('Autoria não obtida para '+p.key+': '+String(e.message||e));}
+  }
+ }));
+ console.log('autorias novas obtidas: '+foundAuthors+'; registros com autoria: '+materias.filter(p=>p.autores?.length).length);
  const successSources=['camara','senado'].filter(x=>ok[x]);
  const snapshot={
   formato:'radar-legislativo-snapshot-v1',
