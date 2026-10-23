@@ -1,0 +1,5 @@
+const test=require('node:test');const assert=require('node:assert/strict');
+const {normalizeCamara,extractSenado,clampInt,validType} =require('../api/_lib/client');
+test('normalize matéria da Câmara sem inventar situação',()=>{const p=normalizeCamara({id:42,siglaTipo:'PL',numero:7,ano:2026,ementa:'Texto original'});assert.equal(p.key,'camara:42');assert.equal(p.situacao,'');assert.match(p.url,/idProposicao=42/)});
+test('extrai matéria do Senado aninhada, remove duplicação',()=>{const doc={Materias:{Materia:[{IdentificacaoMateria:{CodigoMateria:44,SiglaSubtipoMateria:'PEC',NumeroMateria:9,AnoMateria:2026},DadosBasicosMateria:{EmentaMateria:'Ementa oficial'}},{IdentificacaoMateria:{CodigoMateria:44,SiglaSubtipoMateria:'PEC',NumeroMateria:9,AnoMateria:2026}}]}};const a=extractSenado(doc);assert.equal(a.length,1);assert.equal(a[0].ementa,'Ementa oficial')});
+test('impede tipo arbitrário e restringe paginação',()=>{assert.equal(validType('../x'),false);assert.equal(validType('PLP'),true);assert.equal(clampInt('999',1,30,1),30)});
