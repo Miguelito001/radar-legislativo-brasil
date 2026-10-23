@@ -1,0 +1,26 @@
+name: Importação histórica Câmara
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '29 4 * * *'
+permissions:
+  contents: read
+jobs:
+  incremental-history:
+    if: ${{ secrets.DATABASE_URL != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    concurrency:
+      group: radar-postgres-backfill
+      cancel-in-progress: false
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      BACKFILL_MIN_YEAR: '2023'
+      BACKFILL_PAGES_PER_RUN: '6'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: npm install --ignore-scripts --no-audit --no-fund
+      - run: node scripts/backfill-camara.js
