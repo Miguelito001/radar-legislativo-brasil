@@ -3,6 +3,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const {normalizeBatch,openPool,migrate,saveMatters,saveMovements}=require('../database/client');
 const {fingerprint}=require('../packages/core/observations');
+const {searchMatters,matterDetails,getPool}=require('../database/query');
 function dummy(id,ementa='Teste de ementa'){
  return {key:'camara:'+id,origem:'camara',id:String(id),tipo:'PL',numero:'1',ano:'2026',
  ementa,data:'2026-10-23',situacao:'Em tramitação',
@@ -31,6 +32,13 @@ test('PostgreSQL migrates, archives real state transitions and preserves reversi
   assert.equal(result.revisions,1);
   result=await saveMatters(client,[matter]);
   assert.equal(result.revisions,1);
+  const search=await searchMatters({fonte:'camara',numero:'1',ano:'2026',q:'Teste de ementa'});
+  assert.ok(search.total>=1);
+  assert.ok(search.materias.some(m=>m.id===id));
+  const detailed=await matterDetails('camara',id);
+  assert.equal(detailed.materia.id,id);
+  const injection=await searchMatters({fonte:'camara',q:"' OR 1=1 --"});
+  assert.equal(injection.total,0);
   const observations=await client.query(
    'select fingerprint from rl_observations where source=$1 and external_id=$2 order by id',
    ['camara',id]
@@ -49,6 +57,6 @@ test('PostgreSQL migrates, archives real state transitions and preserves reversi
   await client.query('delete from rl_observations where source=$1 and external_id=$2',['camara',id]);
   await client.query('delete from rl_movements where source=$1 and external_id=$2',['camara',id]);
   await client.query('delete from rl_matters where source=$1 and external_id=$2',['camara',id]);
-  client.release();await pool.end();
+  client.release();await pool.end();await getPool()?.end();
  }
 });
