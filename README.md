@@ -46,3 +46,18 @@ Todos os tipos de matérias federais, Câmara, Senado e Congresso, importação 
 - https://legis.senado.leg.br/dadosabertos/docs/index.html
 
 Licença MIT (somente código original deste repositório; dados das fontes sujeitos às regras de origem).
+
+
+## Recuperação de dados e auditoria de sincronização (2026-10-23)
+
+A versão de demonstração foi reforçada após um incidente no qual o painel ficava vazio devido a um erro de inicialização no DOM. A correção também adicionou uma amostra persistida para evitar que falhas de upstream esvaziem a página.
+
+- `scripts/collect.js`: busca proposições recentes da Câmara e matérias atualizadas no Senado, além das votações e da agenda da Câmara.
+- `.github/workflows/sync-legislative-data.yml`: executa a coleta a cada duas horas e publica os últimos arquivos oficiais válidos em `data/`.
+- `data/latest.json`, `data/votacoes.json`, `data/agenda.json`: arquivos de amostra disponíveis estaticamente no site. **Não são um banco histórico completo nem garantem tempo real.**
+- `app.js`: exibe primeiro a amostra válida; depois tenta consultar diretamente as APIs, mesclando registros por identificador oficial. Caso a API falhe, mantém os dados existentes com aviso de consulta parcial.
+- `tests/dashboard.test.js`: verifica, com uma simulação de falha da API, que o painel ainda exibe registros e links oficiais.
+
+**Critério de transparência:** nunca apresentar a quantidade da amostra como total nacional, nem a data de sincronização como data de votação ou tramitação. Registros sem ementa devem ser exibidos sem inventar descrição.
+
+**Limitação atual:** ainda faltam a base PostgreSQL de eventos, a reconciliação completa das duas Casas, o histórico de votações e a integração abrangente do Congresso Nacional. Os arquivos em `data/` são uma camada de disponibilidade da fase técnica inicial, não a arquitetura definitiva.
