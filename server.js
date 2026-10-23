@@ -3,7 +3,7 @@ const http=require('node:http');
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const root=__dirname;
-const allowedApis=new Set(['materias','materia','votacoes','agenda','autores','saude']);
+const allowedApis=new Set(['materias','materia','votacoes','agenda','autores','saude','cron-db']);
 const staticFiles=new Map([
  ['/','index.html'],['/index.html','index.html'],['/app.js','app.js'],
  ['/glossary.js','glossary.js'],['/styles.css','styles.css'],

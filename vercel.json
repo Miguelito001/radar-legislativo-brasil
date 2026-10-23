@@ -1,5 +1,26 @@
 {
   "version": 2,
-  "functions": {"api/*.js":{"maxDuration":20}},
-  "headers": [{"source":"/api/(.*)","headers":[{"key":"Cache-Control","value":"public, s-maxage=90, stale-while-revalidate=120"}]}]
+  "buildCommand": "node scripts/vercel-bootstrap.js",
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron-db",
+      "schedule": "23 4 * * *"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=90, stale-while-revalidate=120"
+        }
+      ]
+    }
+  ]
 }
