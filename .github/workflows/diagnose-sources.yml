@@ -16,6 +16,7 @@ jobs:
         shell: bash
         run: |
           node --input-type=module <<'NODE'
+          const {createRequire}=await import('node:module'); const require=createRequire(import.meta.url);
           const urls=[
             ['camara-latest','https://dadosabertos.camara.leg.br/api/v2/proposicoes?itens=5&pagina=1&ordenarPor=id&ordem=DESC'],
             ['camara-simple','https://dadosabertos.camara.leg.br/api/v2/proposicoes?itens=5'],
