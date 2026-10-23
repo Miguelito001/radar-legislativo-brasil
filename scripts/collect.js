@@ -26,7 +26,17 @@ function onePerKey(records){
  });
 }
 function readExisting(filename){try{return JSON.parse(fs.readFileSync(filename,'utf8'))}catch{return null}}
-function writeJson(filename,data){fs.mkdirSync(path.dirname(filename),{recursive:true});fs.writeFileSync(filename,JSON.stringify(data,null,2)+'\n');}
+function writeJson(filename,data){
+ const existing=readExisting(filename);
+ if(existing){
+  const old={...existing},incoming={...data};
+  delete old.consultadoEm;delete incoming.consultadoEm;
+  if(JSON.stringify(old)===JSON.stringify(incoming))return false;
+ }
+ fs.mkdirSync(path.dirname(filename),{recursive:true});
+ fs.writeFileSync(filename,JSON.stringify(data,null,2)+'\n');
+ return true;
+}
 async function main(){
  const folder=path.resolve(__dirname,'../data');
  const previous=readExisting(path.join(folder,'latest.json'));
