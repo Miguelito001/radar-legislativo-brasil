@@ -1,6 +1,6 @@
 {
   "formato": "radar-legislativo-snapshot-v1",
-  "consultadoEm": "2026-10-23T13:04:24.746Z",
+  "consultadoEm": "2026-10-23T13:15:11.031Z",
   "escopo": "Amostra das 150 proposições mais recentemente cadastradas na Câmara e de até 400 matérias atualizadas na última semana no Senado. Não corresponde ao acervo completo ou a um feed de movimentações.",
   "fontes": [
     "camara",
@@ -65,7 +65,15 @@
       "ementa": "Aprova o ato que renova a autorização outorgada à Associação Comunitária de Bilac para o Desenvolvimento Cultural, Social e Artístico para executar serviço de radiodifusão comunitária no Município de Bilac, Estado de São Paulo.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176058"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176058",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176057",
@@ -78,7 +86,15 @@
       "ementa": "Aprova o ato que renova a concessão outorgada à JMB Empreendimentos Ltda., atualmente denominada K.M.M. Radiodifusão Ltda., para explorar serviço de radiodifusão sonora em onda média, posteriormente adaptado para o serviço de radiodifusão sonora em frequência modulada, no Município de Santa Cruz do Capibaribe, Estado de Pernambuco.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176057"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176057",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176056",
@@ -91,7 +107,15 @@
       "ementa": "Aprova o ato que outorga autorização à Associação Comunitária Cultural e Educacional de Guarapari para executar serviço de radiodifusão comunitária no Município de Guarapari, Estado do Espírito Santo.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176056"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176056",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176055",
@@ -104,7 +128,15 @@
       "ementa": "Aprova o ato que outorga autorização à Associação Cultural Portal do Araripe para executar serviço de radiodifusão comunitária no Município de Ouricuri, Estado de Pernambuco.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176055"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176055",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176054",
@@ -117,7 +149,15 @@
       "ementa": "Aprova o ato que renova a autorização outorgada à Associação Cultural de Radiodifusão Comunitária para executar serviço de radiodifusão comunitária no Município de José Boiteux, Estado de Santa Catarina.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176054"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176054",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176053",
@@ -130,7 +170,15 @@
       "ementa": "Aprova o ato que outorga permissão a Contestado Comunicações Ltda. para explorar serviço de radiodifusão sonora em frequência modulada no Município de Iomerê, Estado de Santa Catarina.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176053"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176053",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176052",
@@ -143,7 +191,15 @@
       "ementa": "Aprova o ato que renova a permissão outorgada à Tropical do Agreste Ltda. para explorar serviço de radiodifusão sonora em frequência modulada no Município de Igarassu, Estado de Pernambuco.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176052"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176052",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176051",
@@ -156,7 +212,15 @@
       "ementa": "Aprova o ato que renova a concessão outorgada à Rádio Avaré Ltda. para explorar serviço de radiodifusão sonora em onda média, posteriormente adaptado para o serviço de radiodifusão sonora em frequência modulada, no Município de Avaré, Estado de São Paulo.",
       "data": "2026-10-23",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176051"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176051",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "camara:2648811",
@@ -631,7 +695,15 @@
       "ementa": "Aprova o ato que outorga autorização à Associação de Comunicação Comunitária de Cascavel para executar serviço de radiodifusão comunitária no Município de Cascavel, Estado do Paraná.",
       "data": "2026-10-22",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176050"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176050",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176049",
@@ -644,7 +716,15 @@
       "ementa": "Aprova o ato que outorga autorização à Associação Comunitária Bororó para executar serviço de radiodifusão comunitária no Município de Guarapuava, Estado do Paraná.",
       "data": "2026-10-22",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176049"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176049",
+      "autores": [
+        {
+          "nome": "Câmara dos Deputados",
+          "tipo": "Câmara dos Deputados",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176048",
@@ -657,7 +737,15 @@
       "ementa": "Requer licença dos trabalhos da Casa.",
       "data": "2026-10-22",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176048"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176048",
+      "autores": [
+        {
+          "nome": "Styvenson Valentim",
+          "tipo": "Senador",
+          "partido": "PODE",
+          "uf": "RN"
+        }
+      ]
     },
     {
       "key": "senado:176047",
@@ -670,7 +758,15 @@
       "ementa": "Requer informações ao Senhor Wolney Queiroz Maciel, Ministro de Estado da Previdência Social, sobre os riscos de portabilidade bancária de aposentadorias e pensões do INSS, a segurança dos beneficiários, a preservação dos contratos públicos de pagamento de benefícios e a necessidade de revisão do artigo 4º da Lei nº 15.252/2025.",
       "data": "2026-10-22",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176047"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176047",
+      "autores": [
+        {
+          "nome": "Izalci Lucas",
+          "tipo": "Senador",
+          "partido": "PL",
+          "uf": "DF"
+        }
+      ]
     },
     {
       "key": "senado:176046",
@@ -683,7 +779,15 @@
       "ementa": "Oferece representação contra o Ministro do Supremo Tribunal Federal Alexandre de Moraes, com fundamento da Lei nº 1.079, de 1950.",
       "data": "2026-10-22",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176046"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176046",
+      "autores": [
+        {
+          "nome": "Edvaldo Aparecido de Almeida",
+          "tipo": "Cidadão",
+          "partido": "",
+          "uf": ""
+        }
+      ]
     },
     {
       "key": "senado:176045",
@@ -696,7 +800,15 @@
       "ementa": "Altera a Lei nº 9.504, de 30 de setembro de 1997 (Lei das Eleições), para inserir, entre os documentos que devem instruir o pedido de registro de candidatura, a autorização, do candidato e do cônjuge ou companheiro, se houver, para o compartilhamento dos respectivos dados bancários e comunicações telefônicas, nos períodos mencionados, com o órgão competente da Justiça Eleitoral.",
       "data": "2026-10-22",
       "situacao": "",
-      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176045"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176045",
+      "autores": [
+        {
+          "nome": "Randolfe Rodrigues",
+          "tipo": "Senador",
+          "partido": "PT",
+          "uf": "AP"
+        }
+      ]
     },
     {
       "key": "senado:176044",
@@ -2347,20 +2459,6 @@
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648666",
       "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648666"
-    },
-    {
-      "key": "camara:2648665",
-      "id": "2648665",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "PRL",
-      "numero": "1",
-      "ano": "0",
-      "ementa": "Parecer da Relatora, Dep. Franciane Bayer (REPUBLIC-RS), pela aprovação.",
-      "data": "2026-10-21T13:07",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648665",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648665"
     },
     {
       "key": "camara:2648810",
@@ -7315,7 +7413,7 @@
   ],
   "paginacao": {
     "pagina": 1,
-    "itens": 550
+    "itens": 549
   },
   "origens": {
     "camara": 150,
