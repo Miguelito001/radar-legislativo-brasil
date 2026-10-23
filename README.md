@@ -1,4 +1,4 @@
-# Radar Legislativo Brasil — base executável (0.1)
+# Radar Legislativo Brasil — base executável (0.2)
 
 Plataforma independente para consulta documental, **sem posicionamento editorial**. Neste primeiro pacote, o frontend acessa rotas que consultam APIs oficiais no momento do pedido. **Não há persistência histórica nem worker agendado ativo:** portanto isto ainda não é o rastreador completo planejado, nem há garantia de tempo real.
 
@@ -17,6 +17,15 @@ Plataforma independente para consulta documental, **sem posicionamento editorial
 - `/api/materia?origem=senado&id=123456`: dados básicos normalizados do Senado (tramitações pendentes).
 - `/api/votacoes`: consulta direta à Câmara (não cobre Senado/Congresso neste pacote).
 - `/api/agenda`: eventos da Câmara (não cobre Senado/Congresso neste pacote).
+- `/api/autores?origem=camara&id=123456`: consulta autoria da Câmara por identificador oficial; aceita `origem=senado` para a rota oficial de autoria do Senado.
+
+## Glossário e identificação de autores
+
+- `glossary.js` mantém um glossário descritivo e rastreável a referências oficiais, pesquisável pelo menu **Glossário legislativo**.
+- Siglas de matérias têm nome por extenso, descrição acessível por mouse/foco/toque e explicação em linguagem objetiva.
+- Cartões e detalhes consultam os autores oficiais sob demanda (com carregamento limitado a três consultas simultâneas), sem inferir identidade quando a fonte não retornar dados.
+- O glossário **não classifica nem avalia posições políticas**, apenas descreve espécies documentais e procedimentos.
+- A consulta de autoria da Câmara utiliza `GET /proposicoes/{id}/autores`; a do Senado utiliza `GET /materia/autoria/{id}.json`. Respostas incompletas são sinalizadas.
 
 ## Escopo funcional previsto para o lançamento oficial
 
