@@ -20,6 +20,7 @@ test('modificação detectada é observação e nunca votação inferida',()=>{
  assert.equal(e[0].state.ementa,'Texto alterado');
  assert.ok(!('approval' in e[0]));
 });
+test('Ano 0 recebido na fonte é preservado como não especificado, sem inferência',()=>{const item={...source,ano:'0'};assert.equal(changes(null,{materias:[item]},'2026-10-23T15:00:00Z').length,1);});
 test('matéria ausente do novo lote não é considerada arquivada',()=>{
  const e=changes({materias:[source]},{materias:[]},'2026-10-23T15:00:00Z');
  assert.equal(e.length,0);
