@@ -1,6 +1,7 @@
 name: Validate portable container
 on:
   push:
+    branches: [main]
     paths:
       - 'Dockerfile'
       - 'compose.yaml'
