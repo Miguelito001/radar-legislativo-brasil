@@ -20,10 +20,8 @@ async function searchMatters({fonte='todas',tipo='',ano='',numero='',q='',pagina
  if(tipo)condition('kind=?',tipo);
  if(ano)condition('matter_year=?',Number(ano));
  if(numero)condition('matter_number=?',String(numero));
- if(q)condition('(ementa ilike ? or matter_number ilike ? or kind ilike ?)',null);
  // Treat all input as data, never interpolate query text into SQL.
  if(q){
-  where.pop();
   const text='%'+String(q).slice(0,120).replace(/[\\%_]/g,'\\$&')+'%';
   args.push(text);const n=args.length;
   where.push('(ementa ilike $'+n+" escape '\\' or matter_number ilike $"+n+" escape '\\' or kind ilike $"+n+" escape '\\')");
