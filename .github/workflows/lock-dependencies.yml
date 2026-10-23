@@ -1,0 +1,30 @@
+name: Lock Node dependencies
+on:
+  push:
+    paths:
+      - 'package.json'
+      - '.github/workflows/lock-dependencies.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Gerar lockfile reproduzível
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Persistir lockfile revisável
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build: pin transitive dependency versions [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
