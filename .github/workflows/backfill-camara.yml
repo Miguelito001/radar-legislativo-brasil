@@ -23,6 +23,6 @@ jobs:
         with:
           node-version: '24'
       - if: ${{ env.HAS_DB == 'true' }}
-        run: npm install --ignore-scripts --no-audit --no-fund
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - if: ${{ env.HAS_DB == 'true' }}
         run: node scripts/backfill-camara.js
