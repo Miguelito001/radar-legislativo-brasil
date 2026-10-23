@@ -7,7 +7,15 @@ function response(){let data='',statusCode=200;return {headers:{},setHeader(k,v)
 function fake(payload,status=200){return {ok:status===200,status,json:async()=>payload}}
 test('busca da Câmara preserva ementa e link oficial',async t=>{
  const old=global.fetch; t.after(()=>{global.fetch=old});
- global.fetch=async url=>{assert.match(url.toString(),/dadosabertos\.camara\.leg\.br/);return fake({dados:[{id:912345,siglaTipo:'PEC',numero:44,ano:2026,ementa:'Ementa conforme a fonte'}]})};
+ const today=require('../day').todayKey();
+ global.fetch=async url=>{
+  const u=String(url);
+  if(u.includes('/proposicoes')&&!u.includes('/tramitacoes'))return fake({dados:[{
+   id:912345,siglaTipo:'PEC',numero:44,ano:2026,dataApresentacao:today+'T11:00',ementa:'Ementa conforme a fonte'
+  }]});
+  if(u.includes('materia/atualizadas'))return fake({});
+  return fake({dados:[]});
+ };
  const res=response();await matters({method:'GET',url:'/api/materias?fonte=camara&tipo=PEC'},res);const out=res.result;
  assert.equal(out.status,200);assert.equal(out.payload.materias.length,1);assert.equal(out.payload.materias[0].ementa,'Ementa conforme a fonte');assert.equal(out.payload.falhas.length,0);assert.match(out.payload.materias[0].url,/www\.camara\.leg\.br/);
 });
