@@ -1,17 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "node scripts/vercel-bootstrap.js && node scripts/vercel-static.js",
+  "buildCommand": "node scripts/vercel-static.js",
   "functions": {
     "api/*.js": {
-      "maxDuration": 60
+      "maxDuration": 20
     }
   },
-  "crons": [
-    {
-      "path": "/api/cron-db",
-      "schedule": "23 4 * * *"
-    }
-  ],
   "headers": [
     {
       "source": "/api/(.*)",

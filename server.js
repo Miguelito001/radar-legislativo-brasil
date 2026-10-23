@@ -3,13 +3,11 @@ const http=require('node:http');
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const root=__dirname;
-const allowedApis=new Set(['materias','materia','votacoes','agenda','autores','saude','cron-db']);
+const allowedApis=new Set(['materias','materia','votacoes','agenda','autores','saude','hoje']);
 const staticFiles=new Map([
  ['/','index.html'],['/index.html','index.html'],['/app.js','app.js'],
- ['/glossary.js','glossary.js'],['/styles.css','styles.css'],
- ['/data/latest.json','data/latest.json'],
- ['/data/votacoes.json','data/votacoes.json'],
- ['/data/agenda.json','data/agenda.json']
+ ['/glossary.js','glossary.js'],['/day.js','day.js'],['/styles.css','styles.css'],
+ ['/data/today.json','data/today.json']
 ]);
 function contentType(name){
  if(name.endsWith('.json'))return 'application/json; charset=utf-8';
@@ -32,8 +30,6 @@ function createServer(){
    }
    if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405);res.end('Method not allowed');return;}
    let filename=staticFiles.get(pathname);
-   if(!filename && /^\/data\/archive\/\d{4}\/\d{2}\/\d{2}\.ndjson$/.test(pathname))
-     filename=pathname.slice(1);
    if(!filename){res.writeHead(404);res.end('Not found');return;}
    // Explicit allowlist above prevents disclosure of credentials, source code and backup files.
    const bytes=await fs.readFile(path.join(root,filename));

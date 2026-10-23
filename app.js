@@ -5,8 +5,10 @@ const svg=(name)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 const esc=(x)=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const $=sel=>document.querySelector(sel), $$=sel=>Array.from(document.querySelectorAll(sel));
 const glossary=globalThis.RadarGlossary;
-const state={page:'radar',source:'todas',type:'',year:'',q:'',number:'',pagina:1,loading:false,materias:[],fontes:[],falhas:[],last:null,votesLoaded:false,agendaLoaded:false,requestSeq:0,rawSnapshot:[],snapshotUsed:false,total:0,totals:{camara:0,senado:0}};
-function date(v){if(!v)return 'Data não informada';const iso=/^\d{4}-\d{2}-\d{2}$/.test(v)?v+'T12:00:00':v;const d=new Date(iso);return isNaN(d)?String(v).slice(0,10):new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric'}).format(d)}
+const day=globalThis.RadarDay;
+const today=()=>day.todayKey();
+const state={page:'radar',source:'todas',type:'',q:'',pagina:1,materias:[],votacoes:[],eventos:[],fontes:[],falhas:[],last:null,votesLoaded:false,agendaLoaded:false,requestSeq:0,daily:null,snapshotUsed:false,total:0,totals:{camara:0,senado:0},shownDay:today()};
+function date(v){const key=day.dateKey(v);if(!key)return 'Data não informada';const d=new Date(key+'T12:00:00Z');return new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}).format(d)}
 function time(v){if(!v)return '—';const d=new Date(v);return isNaN(d)?'—':new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).format(d)}
 function official(p){return p.origem==='camara'?`https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=${encodeURIComponent(p.id)}`:`https://www25.senado.leg.br/web/atividade/materias/-/materia/${encodeURIComponent(p.id)}`}
 function empty(title,desc,error=false){return `<div class="empty-state"><div>${svg(error?'info':'search')}</div><h3>${esc(title)}</h3><p>${esc(desc)}</p>${error?'<button class="quiet-btn" data-retry="1" type="button">Tentar novamente</button>':''}</div>`}
@@ -113,111 +115,122 @@ window.addEventListener('scroll',hideTerm,true);
 
 function setPage(page){if(!['radar','materias','votacoes','agenda','glossario','fontes'].includes(page))return;state.page=page;$$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+page));$$('[data-page]').forEach(b=>b.classList.toggle('active',b.classList.contains('nav-link')&&b.dataset.page===page));const names={radar:'Visão geral',materias:'Matérias legislativas',votacoes:'Votações',agenda:'Agenda',glossario:'Glossário legislativo',fontes:'Fontes e metodologia'};$('#crumb').textContent=names[page];$('#hero').style.display=page==='radar'?'flex':'none';$('#sidebar').classList.remove('open');$('#mobile-overlay').classList.remove('visible');window.scrollTo({top:0,behavior:'smooth'});if(page==='votacoes'&&!state.votesLoaded)loadVotes();if(page==='agenda'&&!state.agendaLoaded)loadAgenda();if(page==='materias'&&!state.materias.length)loadMatters();if(page==='glossario')renderGlossary();hideTerm();}
 async function request(path){const controller=new AbortController();const t=setTimeout(()=>controller.abort(),17000);try{const r=await fetch(path,{signal:controller.signal});let j;try{j=await r.json()}catch{throw Error('Resposta inválida do servidor')};if(!r.ok)throw Error(j.error||`Erro HTTP ${r.status}`);return j}finally{clearTimeout(t)}}
+
 function filterRows(rows){
- let filtered=Array.isArray(rows)?rows.filter(x=>x&&x.key&&x.id):[];
- if(state.source!=='todas')filtered=filtered.filter(x=>x.origem===state.source);
- if(state.type)filtered=filtered.filter(x=>x.tipo===state.type);
- if(state.year)filtered=filtered.filter(x=>String(x.ano)===state.year);
- const q=state.q.toLocaleLowerCase('pt-BR');
- if(q)filtered=filtered.filter(x=>[x.tipo,x.numero,x.ano,x.ementa,x.situacao,x.casa].some(v=>String(v||'').toLocaleLowerCase('pt-BR').includes(q)));
- return filtered.sort((a,b)=>String(b.data||'').localeCompare(String(a.data||'')));
+ let list=day.onlyToday(rows,today());
+ if(state.source!=='todas')list=list.filter(x=>x.origem===state.source);
+ if(state.type)list=list.filter(x=>x.tipo===state.type);
+ const search=state.q.toLocaleLowerCase('pt-BR');
+ if(search)list=list.filter(x=>[x.tipo,x.numero,x.ano,x.ementa,x.situacao,x.casa].some(v=>String(v||'').toLocaleLowerCase('pt-BR').includes(search)));
+ return list.sort((a,b)=>String(b.data||'').localeCompare(String(a.data||'')));
 }
-function applyRows(rows,{snapshot=false,at=null,fontes=[],falhas=[]}={}){
- const filtered=filterRows(rows);
- for(const p of filtered)if(Array.isArray(p.autores)&&p.autores.length)authorCache.set(p.key,{autores:p.autores});
- state.total=filtered.length;
- state.totals={camara:filtered.filter(x=>x.origem==='camara').length,senado:filtered.filter(x=>x.origem==='senado').length};
- state.materias=filtered.slice((state.pagina-1)*50,state.pagina*50);
- state.snapshotUsed=snapshot;state.last=at;state.fontes=fontes;state.falhas=falhas;
+function renderActivity(){
+ const activities=[
+  ...state.materias.map(p=>({when:p.data,kind:'materia',key:p.key,html:card(p)})),
+  ...state.votacoes.map(v=>({when:v.data,kind:'votacao',key:'v:'+v.id,html:voteCard(v)})),
+  ...state.eventos.map(v=>({when:v.data,kind:'evento',key:'e:'+v.id,html:eventCard(v)}))
+ ];
+ activities.sort((a,b)=>String(b.when||'').localeCompare(String(a.when||'')));
+ $('#radar-results').innerHTML=activities.slice(0,36).map(x=>x.html).join('')||
+  empty('Nenhum acontecimento publicado neste recorte hoje','Isso não significa que o Congresso não teve atividades. As fontes integradas podem estar incompletas ou ainda sem publicação.');
+}
+function voteCard(v){
+ return `<article class="matter-card"><div class="matter-top"><div class="tags"><span class="source-tag">Votação · Câmara</span><span class="matter-id">Registro ${esc(v.id)}</span></div><span class="matter-date">${esc(date(v.data))}</span></div><p class="matter-title">${esc(v.descricao||'Votação registrada oficialmente, sem descrição adicional.')}</p><div class="matter-foot"><span class="record-origin">Resultado: <strong>${esc(v.resultado||'Consultar registro oficial')}</strong></span><div class="matter-actions"><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">Ver votação ${svg('external')}</a></div></div></article>`;
+}
+function eventCard(e){
+ return `<article class="matter-card"><div class="matter-top"><div class="tags"><span class="source-tag">Evento · Câmara</span><span class="matter-id">Agenda ${esc(e.id)}</span></div><span class="matter-date">${esc(date(e.data))}</span></div><p class="matter-title">${esc(e.descricao||'Evento cadastrado sem descrição.')}</p><div class="matter-foot"><span class="record-origin">Situação: <strong>${esc(e.situacao||'A confirmar na fonte')}</strong> · Agendamento não comprova realização</span><div class="matter-actions"><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">Fonte oficial ${svg('external')}</a></div></div></article>`;
+}
+function applyDay(payload,{snapshot=false}={}){
+ if(payload?.dia!==today())return false;
+ const filtered=day.trimDaily(payload,today());
+ state.daily=filtered;
+ state.shownDay=today();
+ state.votacoes=filtered.votacoes;
+ state.eventos=filtered.eventos;
+ state.snapshotUsed=snapshot;
+ state.last=filtered.consultadoEm;
+ state.fontes=filtered.fontesConsultadas||[];
+ state.falhas=filtered.falhas||[];
+ const list=filterRows(filtered.materias);
+ for(const p of list)if(Array.isArray(p.autores)&&p.autores.length)authorCache.set(p.key,{autores:p.autores});
+ state.total=list.length;
+ state.totals={camara:state.votacoes.length,senado:state.eventos.length};
+ state.materias=list.slice((state.pagina-1)*50,state.pagina*50);
  renderMatters();
+ renderVotes({votacoes:state.votacoes});
+ renderAgenda({eventos:state.eventos});
+ state.votesLoaded=true;state.agendaLoaded=true;
+ return true;
 }
-async function loadMatters(){
+async function loadMatters({force=false}={}){
  const seq=++state.requestSeq;
- $('#matter-results').innerHTML=empty('Buscando registros oficiais','Carregando a última amostra validada das fontes.');
- $('#radar-results').innerHTML=empty('Buscando registros oficiais','Carregando dados documentados do Legislativo.');
- $('#results-summary').textContent='Carregando informações...';
- const params=new URLSearchParams({fonte:state.source,pagina:String(state.pagina)});
- if(state.type)params.set('tipo',state.type);if(state.year)params.set('ano',state.year);if(state.q)params.set('q',state.q);
- let hasData=false;
+ $('#radar-results').innerHTML=empty('Consultando acontecimentos de hoje','Buscando dados oficiais com data do dia em Brasília.');
+ $('#matter-results').innerHTML=empty('Consultando apresentações de hoje','Carregando a lista do dia.');
+ $('#results-summary').textContent='Consultando fontes oficiais...';
+ let valid=false;
  try{
-  const j=await request('/data/latest.json?v='+Math.floor(Date.now()/120000));
+  const cached=await request('/data/today.json?v='+Math.floor(Date.now()/120000));
   if(seq!==state.requestSeq)return;
-  if(Array.isArray(j.materias)&&j.materias.length){
-   state.rawSnapshot=j.materias;
-   applyRows(j.materias,{snapshot:true,at:j.consultadoEm,fontes:j.fontes||[],falhas:j.falhas||[]});
-   hasData=true;
-  }
- }catch(e){ console.warn('Amostra oficial indisponível; usando consulta direta:',e?.message||e); }
+  valid=applyDay(cached,{snapshot:true});
+  if(valid&&!force&&Date.now()-Date.parse(cached.consultadoEm)<90*60*1000)return;
+ }catch(e){console.warn('Amostra diária não disponível:',e?.message||e)}
  try{
-  const live=await request('/api/materias?'+params.toString());
+  const live=await request('/api/hoje?v='+Math.floor(Date.now()/120000));
   if(seq!==state.requestSeq)return;
-  const dynamic=Array.isArray(live.materias)?live.materias:[];
-  if(!dynamic.length&&!hasData)throw Error('As APIs responderam sem registros neste lote.');
-  const merged=new Map((hasData?state.rawSnapshot:[]).map(p=>[p.key,p]));
-  for(const p of dynamic)if(p?.key){const cached=merged.get(p.key);merged.set(p.key,cached?.autores?.length&&!p.autores?.length?{...p,autores:cached.autores}:p);}
-  applyRows([...merged.values()],{snapshot:hasData,at:live.consultadoEm||state.last,fontes:[...new Set([...(hasData?state.fontes:[]),...(live.fontes||[])])],falhas:live.falhas||[]});
-  hasData=true;
+  if(!applyDay(live,{snapshot:false}))throw Error('A fonte devolveu dados de outra data.');
+  valid=true;
  }catch(e){
   if(seq!==state.requestSeq)return;
-  if(hasData){
-   state.falhas=[...state.falhas,'A consulta direta não respondeu; exibindo somente a amostra oficial previamente sincronizada.'];
+  if(valid){
+   state.falhas.push({fonte:'consulta-direta',erro:'Consulta ao vivo indisponível. Exibindo a última captura de hoje.'});
    renderMatters();
   }else{
-   state.materias=[];state.total=0;state.totals={camara:0,senado:0};
-   $('#radar-results').innerHTML=empty('Fontes temporariamente indisponíveis','Não há amostra válida disponível nesta implantação.',true);
-   $('#matter-results').innerHTML=empty('Consulta indisponível',e.message||'Não foi possível obter registros',true);
-   $('#results-summary').textContent='Nenhuma fonte disponível';
+   state.daily=null;state.materias=[];state.votacoes=[];state.eventos=[];
+   state.total=0;
+   $('#radar-results').innerHTML=empty('Consulta do dia indisponível','Não foi possível verificar os acontecimentos de hoje. Dados de ontem não serão exibidos.',true);
+   $('#matter-results').innerHTML=empty('Consulta do dia indisponível','As fontes oficiais não responderam.',true);
+   $('#votes-results').innerHTML=empty('Votações indisponíveis','Não é possível confirmar votações de hoje.');
+   $('#agenda-results').innerHTML=empty('Agenda indisponível','Não é possível confirmar eventos de hoje.');
+   $('#results-summary').textContent='Sem dados verificados para hoje';
    $('#count-matters').textContent=$('#count-camara').textContent=$('#count-senado').textContent=$('#count-update').textContent='—';
-   $('#sidebar-sync').textContent='Consulta indisponível';
+   $('#sidebar-sync').textContent='Fontes indisponíveis';
   }
  }
 }
 function renderMatters(){
  const list=state.materias;
- const html=list.map(card).join('');
- $('#matter-results').innerHTML=html||empty('Nenhum registro encontrado nesta amostra','Experimente mudar os filtros. A pesquisa ainda não cobre o acervo histórico completo.');
- $('#radar-results').innerHTML=list.slice(0,5).map(card).join('')||empty('Nenhum registro neste filtro','A pesquisa atual não encontrou matérias na amostra.');
- const label=state.snapshotUsed?'Amostra oficial sincronizada + consultas disponíveis':'Resultado de consulta direta';
- $('#results-summary').textContent=state.total.toLocaleString('pt-BR')+' registros no conjunto consultado · '+label+(state.falhas.length?' · atenção: consulta parcial':'');
+ $('#matter-results').innerHTML=list.map(card).join('')||
+  empty('Nenhuma apresentação encontrada hoje','Não há registros de apresentação nesta consulta parcial do dia.');
+ renderActivity();
+ $('#results-summary').textContent=state.total.toLocaleString('pt-BR')+' matérias apresentadas hoje (no recorte disponível)'+(state.falhas.length?' · consulta parcial':'');
  $('#count-matters').textContent=state.total.toLocaleString('pt-BR');
- $('#count-camara').textContent=state.totals.camara.toLocaleString('pt-BR');
- $('#count-senado').textContent=state.totals.senado.toLocaleString('pt-BR');
+ $('#count-camara').textContent=state.votacoes.length.toLocaleString('pt-BR');
+ $('#count-senado').textContent=state.eventos.length.toLocaleString('pt-BR');
  $('#count-update').textContent=time(state.last);
- $('#sidebar-sync').textContent=(state.falhas.length?'Amostra disponível · ':'Consultado às ')+time(state.last);
+ $('#sidebar-sync').textContent=(state.falhas.length?'Cobertura parcial · ':'Consultado às ')+time(state.last);
  $('#page-indicator').textContent='Página '+state.pagina;
  $('#prev-page').disabled=state.pagina<=1;
  $('#next-page').disabled=state.pagina*50>=state.total;
  hydrateAuthors();
 }
-async function detail(key){const p=state.materias.find(x=>x.key===key);if(!p)return;$('#drawer-scrim').hidden=false;$('#drawer').classList.add('open');$('#drawer').setAttribute('aria-hidden','false');$('#drawer-content').innerHTML=empty('Carregando histórico','Consultando os registros detalhados na fonte oficial.');try{const j=await request(`/api/materia?origem=${encodeURIComponent(p.origem)}&id=${encodeURIComponent(p.id)}`);const m=j.materia||p;const tr=j.tramitacoes||[];const vs=j.votacoes||[];$('#drawer-content').innerHTML=`<div class="tags">${termBadge(m.tipo)}<span class="source-tag">${esc(m.casa)}</span></div><h2 id="drawer-title">${esc(m.tipo)} ${esc(m.numero)}/${esc(m.ano)}</h2><p class="drawer-type-name">${esc(glossary.find(m.tipo)?.nome||"Tipo segundo a fonte oficial")}</p><p>${esc(m.ementa||'Ementa não publicada no resultado.')}</p><div class="drawer-meta"><div><small>Data de apresentação</small><strong>${esc(date(m.data))}</strong></div><div><small>Situação oficial</small><strong>${esc(j.detalhes?.situacao||'Consultar a fonte')}</strong></div><div><small>Identificador da fonte</small><strong>${esc(m.id)}</strong></div><div><small>Consulta realizada</small><strong>${esc(time(j.consultadoEm))}</strong></div></div><div class="detail-authors"><h3>Autoria registrada</h3><p class="author-pending" data-author-key="${esc(m.key||p.key)}">Consultando registro oficial…</p></div><a class="official-link" href="${esc(official(m))}" target="_blank" rel="noopener noreferrer">Abrir ficha oficial ${svg('external')}</a><h3>Tramitações retornadas (${tr.length})</h3>${tr.length?`<div class="drawer-events">${tr.map(t=>`<div class="drawer-event"><time>${esc(date(t.data))}</time><p>${esc(t.descricao||t.despacho||'Ato registrado')}</p><small>${esc(t.orgao||'')}</small></div>`).join('')}</div>`:'<p>Histórico detalhado não disponível nesta consulta. A ficha oficial pode conter dados adicionais.</p>'}<h3>Votações vinculadas (${vs.length})</h3>${vs.length?vs.map(v=>`<div class="drawer-event"><time>${esc(date(v.data))}</time><p>${esc(v.descricao)}</p><small>${esc(v.resultado||'')}</small></div>`).join(''):'<p>Nenhuma votação foi retornada nesta consulta. Isso não comprova ausência de deliberações.</p>'}${(j.avisos||[]).map(a=>`<p class="error-small">${esc(a)}</p>`).join('')}`;
+
+async function detail(key){const p=state.materias.find(x=>x.key===key);if(!p)return;$('#drawer-scrim').hidden=false;$('#drawer').classList.add('open');$('#drawer').setAttribute('aria-hidden','false');$('#drawer-content').innerHTML=empty('Consultando atos oficiais','Consultando os registros detalhados na fonte oficial.');try{const j=await request(`/api/materia?origem=${encodeURIComponent(p.origem)}&id=${encodeURIComponent(p.id)}`);const m=j.materia||p;const tr=day.onlyToday(j.tramitacoes||[],today());const vs=day.onlyToday(j.votacoes||[],today());$('#drawer-content').innerHTML=`<div class="tags">${termBadge(m.tipo)}<span class="source-tag">${esc(m.casa)}</span></div><h2 id="drawer-title">${esc(m.tipo)} ${esc(m.numero)}/${esc(m.ano)}</h2><p class="drawer-type-name">${esc(glossary.find(m.tipo)?.nome||"Tipo segundo a fonte oficial")}</p><p>${esc(m.ementa||'Ementa não publicada no resultado.')}</p><div class="drawer-meta"><div><small>Data de apresentação</small><strong>${esc(date(m.data))}</strong></div><div><small>Situação oficial</small><strong>${esc(j.detalhes?.situacao||'Consultar a fonte')}</strong></div><div><small>Identificador da fonte</small><strong>${esc(m.id)}</strong></div><div><small>Consulta realizada</small><strong>${esc(time(j.consultadoEm))}</strong></div></div><div class="detail-authors"><h3>Autoria registrada</h3><p class="author-pending" data-author-key="${esc(m.key||p.key)}">Consultando registro oficial…</p></div><a class="official-link" href="${esc(official(m))}" target="_blank" rel="noopener noreferrer">Abrir ficha oficial ${svg('external')}</a><h3>Tramitações identificadas hoje (${tr.length})</h3>${tr.length?`<div class="drawer-events">${tr.map(t=>`<div class="drawer-event"><time>${esc(date(t.data))}</time><p>${esc(t.descricao||t.despacho||'Ato registrado')}</p><small>${esc(t.orgao||'')}</small></div>`).join('')}</div>`:'<p>Nenhuma tramitação de hoje foi identificada nesta consulta. A ficha oficial pode conter outras movimentações.</p>'}<h3>Votações vinculadas hoje (${vs.length})</h3>${vs.length?vs.map(v=>`<div class="drawer-event"><time>${esc(date(v.data))}</time><p>${esc(v.descricao)}</p><small>${esc(v.resultado||'')}</small></div>`).join(''):'<p>Nenhuma votação foi retornada nesta consulta. Isso não comprova ausência de deliberações.</p>'}${(j.avisos||[]).map(a=>`<p class="error-small">${esc(a)}</p>`).join('')}`;
  hydrateAuthors();
  }catch(e){$('#drawer-content').innerHTML=empty('Detalhes indisponíveis',e.message||'Fonte não respondeu',true)+`<p><a class="official-link" href="${esc(official(p))}" target="_blank" rel="noopener noreferrer">Abrir na fonte oficial ${svg('external')}</a></p>`;}}
 function closeDrawer(){$('#drawer-scrim').hidden=true;$('#drawer').classList.remove('open');$('#drawer').setAttribute('aria-hidden','true')}
+
 function renderVotes(j){
- if(!Array.isArray(j?.votacoes))throw Error('Formato inválido das votações oficiais');
- $('#votes-results').innerHTML=j.votacoes.length?j.votacoes.map(v=>`<article class="matter-card"><div class="matter-top"><div class="tags"><span class="source-tag">Câmara</span><span class="matter-id">Votação ${esc(v.id)}</span></div><span class="matter-date">${esc(date(v.data))}</span></div><p class="matter-title">${esc(v.descricao||'Descrição não informada pela fonte')}</p><div class="matter-foot"><span class="record-origin">Resultado: <strong>${esc(v.resultado||'Consultar registro')}</strong></span><div class="matter-actions"><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">Registro oficial ${svg('external')}</a></div></div></article>`).join(''):empty('Sem votações retornadas','A consulta não retornou registros para este lote.');
-}
-async function loadVotes(){
- state.votesLoaded=true;
- $('#votes-results').innerHTML=empty('Consultando votações','Carregando votações oficiais disponíveis.');
- let available=false;
- try{const j=await request('/data/votacoes.json?v='+Math.floor(Date.now()/120000));renderVotes(j);available=true;}catch{}
- try{const j=await request('/api/votacoes');renderVotes(j);available=true;}
- catch(e){if(!available){state.votesLoaded=false;$('#votes-results').innerHTML=empty('Votações indisponíveis',e.message||'As duas consultas falharam',true);}}
+ const votes=day.onlyToday(j?.votacoes,today());
+ $('#votes-results').innerHTML=votes.length?votes.map(voteCard).join(''):empty('Nenhuma votação encontrada hoje','As fontes integradas não retornaram votações com data de hoje.');
 }
 function renderAgenda(j){
- if(!Array.isArray(j?.eventos))throw Error('Formato inválido da agenda oficial');
- $('#agenda-results').innerHTML=j.eventos.length?j.eventos.map(v=>`<article class="matter-card"><div class="matter-top"><div class="tags"><span class="source-tag">Câmara</span><span class="matter-id">Evento ${esc(v.id)}</span></div><span class="matter-date">${esc(date(v.data))}</span></div><p class="matter-title">${esc(v.descricao||'Descrição não retornada')}</p><div class="matter-foot"><span class="record-origin">Situação cadastrada: <strong>${esc(v.situacao||'Consultar registro')}</strong></span><div class="matter-actions">${v.url.startsWith('https://dadosabertos.camara.leg.br/')?`<a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">Registro oficial ${svg('external')}</a>`:''}</div></div></article>`).join(''):empty('Sem eventos retornados','A API não retornou eventos nesta consulta.');
+ const events=day.onlyToday(j?.eventos,today());
+ $('#agenda-results').innerHTML=events.length?events.map(eventCard).join(''):empty('Nenhum evento encontrado hoje','A agenda da Câmara não retornou eventos para hoje nesta consulta.');
 }
-async function loadAgenda(){
- state.agendaLoaded=true;
- $('#agenda-results').innerHTML=empty('Consultando agenda','Carregando eventos oficiais disponíveis.');
- let available=false;
- try{const j=await request('/data/agenda.json?v='+Math.floor(Date.now()/120000));renderAgenda(j);available=true;}catch{}
- try{const j=await request('/api/agenda');renderAgenda(j);available=true;}
- catch(e){if(!available){state.agendaLoaded=false;$('#agenda-results').innerHTML=empty('Agenda indisponível',e.message||'As duas consultas falharam',true);}}
-}
-function filtersReset(){state.pagina=1;loadMatters()}
-document.addEventListener('click',e=>{const term=e.target.closest('[data-term]');if(term&&!term.matches('[data-type]')){showTerm(term);return}if(!e.target.closest('#term-popover'))hideTerm();const nav=e.target.closest('[data-page]');if(nav){setPage(nav.dataset.page);return}const chip=e.target.closest('[data-type]');if(chip){state.type=chip.dataset.type;$$$('[data-type]').forEach(b=>b.classList.toggle('active',b===chip));filtersReset();return}const link=e.target.closest('[data-detail]');if(link){detail(link.dataset.detail);return}if(e.target.closest('[data-retry]')){if(state.page==='votacoes')loadVotes();else if(state.page==='agenda')loadAgenda();else loadMatters()}});
-$('#source-filter').addEventListener('change',e=>{state.source=e.target.value;filtersReset()});$('#year-filter').addEventListener('change',e=>{state.year=e.target.value;filtersReset()});let debounce;$('#query').addEventListener('input',e=>{clearTimeout(debounce);debounce=setTimeout(()=>{state.q=e.target.value.trim();state.pagina=1;loadMatters()},430)});$('#prev-page').addEventListener('click',()=>{if(state.pagina>1){state.pagina--;loadMatters()}});$('#next-page').addEventListener('click',()=>{state.pagina++;loadMatters()});$('#refresh-radar').addEventListener('click',loadMatters);$('#refresh-votes').addEventListener('click',loadVotes);$('#refresh-agenda').addEventListener('click',loadAgenda);$('#close-drawer').addEventListener('click',closeDrawer);$('#drawer-scrim').addEventListener('click',closeDrawer);document.addEventListener('keydown',e=>{if(e.key==='Escape'){hideTerm();closeDrawer()}});$('#mobile-toggle').addEventListener('click',()=>{$('#sidebar').classList.add('open');$('#mobile-overlay').classList.add('visible')});$('#mobile-overlay').addEventListener('click',()=>{$('#sidebar').classList.remove('open');$('#mobile-overlay').classList.remove('visible')});$$('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon)});$$('[data-type]').forEach(el=>{const item=glossary.find(el.dataset.type);if(item){el.dataset.term=item.id;el.title=item.nome+' — '+item.descricao}});$('#glossary-search').addEventListener('input',renderGlossary);renderGlossary();$('#date-today').textContent=new Intl.DateTimeFormat('pt-BR',{dateStyle:'long'}).format(new Date());for(let y=new Date().getFullYear();y>=2020;y--){const o=document.createElement('option');o.value=String(y);o.textContent=String(y);$('#year-filter').append(o)}loadMatters();
+function loadVotes(){if(state.daily&&state.shownDay===today())renderVotes({votacoes:state.votacoes});else loadMatters()}
+function loadAgenda(){if(state.daily&&state.shownDay===today())renderAgenda({eventos:state.eventos});else loadMatters()}
+
+function filtersReset(){state.pagina=1;if(state.daily&&state.shownDay===today())applyDay(state.daily,{snapshot:state.snapshotUsed});else loadMatters()}
+document.addEventListener('click',e=>{const term=e.target.closest('[data-term]');if(term&&!term.matches('[data-type]')){showTerm(term);return}if(!e.target.closest('#term-popover'))hideTerm();const nav=e.target.closest('[data-page]');if(nav){setPage(nav.dataset.page);return}const chip=e.target.closest('[data-type]');if(chip){state.type=chip.dataset.type;$$('[data-type]').forEach(b=>b.classList.toggle('active',b===chip));filtersReset();return}const link=e.target.closest('[data-detail]');if(link){detail(link.dataset.detail);return}if(e.target.closest('[data-retry]')){if(state.page==='votacoes')loadVotes();else if(state.page==='agenda')loadAgenda();else loadMatters()}});
+$('#source-filter').addEventListener('change',e=>{state.source=e.target.value;filtersReset()});let debounce;$('#query').addEventListener('input',e=>{clearTimeout(debounce);debounce=setTimeout(()=>{state.q=e.target.value.trim();state.pagina=1;filtersReset()},430)});$('#prev-page').addEventListener('click',()=>{if(state.pagina>1){state.pagina--;filtersReset()}});$('#next-page').addEventListener('click',()=>{state.pagina++;filtersReset()});$('#refresh-radar').addEventListener('click',()=>loadMatters({force:true}));$('#refresh-votes').addEventListener('click',()=>loadMatters({force:true}));$('#refresh-agenda').addEventListener('click',()=>loadMatters({force:true}));$('#close-drawer').addEventListener('click',closeDrawer);$('#drawer-scrim').addEventListener('click',closeDrawer);document.addEventListener('keydown',e=>{if(e.key==='Escape'){hideTerm();closeDrawer()}});$('#mobile-toggle').addEventListener('click',()=>{$('#sidebar').classList.add('open');$('#mobile-overlay').classList.add('visible')});$('#mobile-overlay').addEventListener('click',()=>{$('#sidebar').classList.remove('open');$('#mobile-overlay').classList.remove('visible')});$$('[data-icon]').forEach(el=>{el.innerHTML=svg(el.dataset.icon)});$$('[data-type]').forEach(el=>{const item=glossary.find(el.dataset.type);if(item){el.dataset.term=item.id;el.title=item.nome+' — '+item.descricao}});$('#glossary-search').addEventListener('input',renderGlossary);renderGlossary();$('#date-today').textContent=new Intl.DateTimeFormat('pt-BR',{dateStyle:'long',timeZone:'America/Sao_Paulo'}).format(new Date());loadMatters();setInterval(()=>{if(state.shownDay!==today()){state.daily=null;state.pagina=1;$('#date-today').textContent=new Intl.DateTimeFormat('pt-BR',{dateStyle:'long',timeZone:'America/Sao_Paulo'}).format(new Date());loadMatters()}},60000);
 })();
