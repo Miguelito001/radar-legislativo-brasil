@@ -2,6 +2,7 @@
 const fs=require('node:fs/promises');
 const path=require('node:path');
 const {officialState,fingerprint,utcPresentation,movementKey}=require('../packages/core/observations');
+const {guardWriteBudget}=require('./budget');
 function connectionString(){return String(process.env.DATABASE_URL||'').trim();}
 function openPool(){
  if(!connectionString())throw Error('DATABASE_URL não configurada');
@@ -75,6 +76,7 @@ SELECT (SELECT count(*)::int FROM changed) AS processed,
        (SELECT count(*)::int FROM observations) AS revisions
 `;
 async function saveMatters(client,matters){
+ await guardWriteBudget(client);
  const batch=normalizeBatch(matters);
  if(!batch.length)throw Error('Nenhuma matéria válida para importar');
  // Uma única operação transacional reduz latência e impede eventos órfãos.
@@ -82,6 +84,7 @@ async function saveMatters(client,matters){
  return {...result.rows[0],invalid:matters.length-batch.length};
 }
 async function saveMovements(client,source,id,movements){
+ await guardWriteBudget(client);
  if(source!=='camara')throw Error('Ainda não foi validado um adaptador para a tramitação desta fonte');
  let inserted=0;
  for(const m of movements){
@@ -102,6 +105,7 @@ async function saveMovements(client,source,id,movements){
  return inserted;
 }
 async function saveVotings(client,rows){
+ await guardWriteBudget(client);
  let count=0;
  for(const v of rows){
   if(!v?.id)continue;
