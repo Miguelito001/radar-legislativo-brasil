@@ -1,0 +1,35 @@
+name: Verificar fontes do dia
+on:
+  push:
+    paths:
+      - 'api/_lib/daily.js'
+      - 'day.js'
+      - 'scripts/collect.js'
+      - '.github/workflows/validate-daily.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Collect verified records for Brasília day
+        run: node scripts/collect.js
+      - name: Verify coverage metadata and local day
+        run: |
+          node - <<'NODE'
+          const assert=require('node:assert/strict');
+          const day=require('./day');
+          const data=require('./data/today.json');
+          assert.equal(data.dia,day.todayKey());
+          assert.ok(data.fontesConsultadas?.length>0);
+          for(const type of ['materias','votacoes','eventos']){
+            assert.ok(data[type].every(item=>day.isToday(item.data,data.dia)),type+' contains other dates');
+          }
+          console.log(JSON.stringify({dia:data.dia,matters:data.materias.length,votes:data.votacoes.length,events:data.eventos.length,coverage:data.fontesConsultadas,failures:data.falhas}));
+          NODE
