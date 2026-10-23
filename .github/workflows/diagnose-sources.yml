@@ -1,0 +1,35 @@
+name: Diagnose official legislative sources
+on:
+  push:
+    paths:
+      - '.github/workflows/diagnose-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check upstream APIs
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          const urls=[
+            ['camara-latest','https://dadosabertos.camara.leg.br/api/v2/proposicoes?itens=5&pagina=1&ordenarPor=id&ordem=DESC'],
+            ['camara-simple','https://dadosabertos.camara.leg.br/api/v2/proposicoes?itens=5'],
+            ['camara-votes','https://dadosabertos.camara.leg.br/api/v2/votacoes?itens=5&pagina=1&ordem=DESC&ordenarPor=dataHoraRegistro'],
+            ['senado-updated','https://legis.senado.leg.br/dadosabertos/materia/atualizadas.json?numdias=3'],
+            ['senado-ongoing','https://legis.senado.leg.br/dadosabertos/materia/tramitando.json']
+          ];
+          for(const [name,url] of urls){
+            try{
+              const started=Date.now();
+              const response=await fetch(url,{headers:{'Accept':'application/json','User-Agent':'RadarLegislativoBrasil/0.2'},signal:AbortSignal.timeout(16000)});
+              const contentType=response.headers.get('content-type');
+              const data=await response.text();
+              let j;try{j=JSON.parse(data)}catch{}
+              console.log(JSON.stringify({name,status:response.status,ms:Date.now()-started,contentType,length:data.length,topKeys:Object.keys(j||{}).slice(0,12),sample:data.slice(0,160)}));
+            }catch(e){console.log(JSON.stringify({name,error:e.message,cause:e.cause?.message||null}));}
+          }
+          NODE
