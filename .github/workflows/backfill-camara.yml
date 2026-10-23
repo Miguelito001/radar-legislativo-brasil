@@ -1,12 +1,11 @@
 name: Importação histórica Câmara
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '29 4 * * *'
 permissions:
   contents: read
 jobs:
   incremental-history:
+    if: false # Histórico desativado: site diário com orçamento R$ 0.
     runs-on: ubuntu-latest
     timeout-minutes: 12
     concurrency:
