@@ -7,7 +7,8 @@ permissions:
   contents: read
 jobs:
   incremental-history:
-    if: ${{ secrets.DATABASE_URL != '' }}
+    env:
+      HAS_DB: ${{ secrets.DATABASE_URL != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     concurrency:
@@ -22,5 +23,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'
-      - run: npm install --ignore-scripts --no-audit --no-fund
-      - run: node scripts/backfill-camara.js
+      - if: ${{ env.HAS_DB == 'true' }}
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - if: ${{ env.HAS_DB == 'true' }}
+        run: node scripts/backfill-camara.js
