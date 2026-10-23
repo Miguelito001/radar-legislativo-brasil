@@ -1,0 +1,41 @@
+name: Atualizar dados legislativos
+on:
+  push:
+    paths:
+      - 'scripts/collect.js'
+      - '.github/workflows/sync-legislative-data.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */2 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: radar-dados-oficiais
+  cancel-in-progress: false
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      - name: Consultar as APIs oficiais e gerar amostras verificáveis
+        run: node scripts/collect.js
+      - name: Validar estrutura dos arquivos
+        run: |
+          node -e "const j=require('./data/latest.json');if(!Array.isArray(j.materias)||j.materias.length<10||j.materias.some(x=>!x.id||!x.tipo||!x.origem))process.exit(1);console.log('Materias verificadas:',j.materias.length)"
+      - name: Publicar atualizações verificadas
+        run: |
+          git config user.name "radar-legislativo-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json data/votacoes.json data/agenda.json
+          if git diff --cached --quiet; then
+            echo "Nenhum arquivo alterado."
+          else
+            git commit -m "data: refresh official Câmara and Senado snapshots [skip ci]"
+            git push origin HEAD:main
+          fi
