@@ -146,7 +146,7 @@ async function loadMatters(){
    applyRows(j.materias,{snapshot:true,at:j.consultadoEm,fontes:j.fontes||[],falhas:j.falhas||[]});
    hasData=true;
   }
- }catch{ /* Se o arquivo está indisponível, continua pela API direta. */ }
+ }catch(e){ console.warn('Amostra oficial indisponível; usando consulta direta:',e?.message||e); }
  try{
   const live=await request('/api/materias?'+params.toString());
   if(seq!==state.requestSeq)return;
