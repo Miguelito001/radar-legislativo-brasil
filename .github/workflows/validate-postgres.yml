@@ -1,6 +1,7 @@
 name: Validar persistência PostgreSQL
 on:
   push:
+    branches: [main]
     paths:
       - 'database/**'
       - 'packages/core/**'
