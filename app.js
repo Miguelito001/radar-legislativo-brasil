@@ -124,6 +124,7 @@ function filterRows(rows){
 }
 function applyRows(rows,{snapshot=false,at=null,fontes=[],falhas=[]}={}){
  const filtered=filterRows(rows);
+ for(const p of filtered)if(Array.isArray(p.autores)&&p.autores.length)authorCache.set(p.key,{autores:p.autores});
  state.total=filtered.length;
  state.totals={camara:filtered.filter(x=>x.origem==='camara').length,senado:filtered.filter(x=>x.origem==='senado').length};
  state.materias=filtered.slice((state.pagina-1)*50,state.pagina*50);
@@ -153,7 +154,7 @@ async function loadMatters(){
   const dynamic=Array.isArray(live.materias)?live.materias:[];
   if(!dynamic.length&&!hasData)throw Error('As APIs responderam sem registros neste lote.');
   const merged=new Map((hasData?state.rawSnapshot:[]).map(p=>[p.key,p]));
-  for(const p of dynamic)if(p?.key)merged.set(p.key,p);
+  for(const p of dynamic)if(p?.key){const cached=merged.get(p.key);merged.set(p.key,cached?.autores?.length&&!p.autores?.length?{...p,autores:cached.autores}:p);}
   applyRows([...merged.values()],{snapshot:hasData,at:live.consultadoEm||state.last,fontes:[...new Set([...(hasData?state.fontes:[]),...(live.fontes||[])])],falhas:live.falhas||[]});
   hasData=true;
  }catch(e){
