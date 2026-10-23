@@ -1,0 +1,87 @@
+{
+  "consultadoEm": "2026-10-23T13:04:24.746Z",
+  "origem": "camara",
+  "escopo": "Amostra de eventos retornados pela Câmara dos Deputados.",
+  "eventos": [
+    {
+      "id": 83060,
+      "data": "2026-10-28T10:00",
+      "descricao": "Discussão e votação de propostas legislativas\r\n PAUTA A DEFINIR.",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 05",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83060"
+    },
+    {
+      "id": 83062,
+      "data": "2026-10-21T10:00",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Cancelada",
+      "local": "Anexo II, Plenário 11",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83062"
+    },
+    {
+      "id": 83069,
+      "data": "2026-10-28T14:00",
+      "descricao": "Discussão e votação de propostas legislativas\r\n Deliberação das Indicações de Beneficiários às programações da LOA - Emendas da Comissão RP-8",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 07",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83069"
+    },
+    {
+      "id": 83077,
+      "data": "2026-10-22T18:00",
+      "descricao": "Lançamento do Livro do Americas Model United Nations (AMUN)",
+      "situacao": "Convocada",
+      "local": "Auditório Nereu Ramos",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83077"
+    },
+    {
+      "id": 83079,
+      "data": "2026-10-21T15:23",
+      "descricao": "Prevenção e enfrentamento da violência sexual infantojuvenil\r\n Tema: Acompanhamento das buscas de crianças e adolescentes desaparecidos junto aos órgãos federais e internacionais e dificuldades enfrentadas pelas famílias.\r\n\r\nConvidados:\r\n\r\n1) CLARICE CARDOSO (Confirmada)\r\n   Mãe dos irmãos Ágatha Isabelly (6 anos) e Allan Michael (4 anos), desaparecidos desde 4 de janeiro de 2026, na zona rural de Bacabal/MA\r\n\r\n2) MARIZE ARAUJO (Confirmada)\r\n   Mãe de Edson Davi (6 anos), desaparecido desde 4 de janeiro de 2024, na Praia da Barra da Tijuca, Rio de Janeiro/RJ\r\n\r\n3) NATHALY MORAES (Confirmada)\r\n   Advogada constituída para acompanhamento das buscas junto aos órgãos federais e internacionais\r\n\r\n4) ELISSON ARAÚJO (a Confirmar)\r\n   Advogado e representante jurídico\r\n   Ordem dos Advogados do Brasil",
+      "situacao": "Encerrada",
+      "local": "Anexo II, Plenário 07",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83079"
+    },
+    {
+      "id": 83091,
+      "data": "2026-10-28T10:00",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 10",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83091"
+    },
+    {
+      "id": 83092,
+      "data": "2026-10-28T09:30",
+      "descricao": "Discussão da pauta e assuntos internos",
+      "situacao": "Convocada",
+      "local": "",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83092"
+    },
+    {
+      "id": 83093,
+      "data": "2026-10-27T15:00",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 05",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83093"
+    },
+    {
+      "id": 83094,
+      "data": "2026-10-28T09:30",
+      "descricao": "Discussão e votação de propostas legislativas\r\n - A pauta completa será publicada com 24 horas de antecedência da reunião.\r\n\r\n- Será adotada pauta de consenso, em acordo com os membros do Colegiado e das lideranças partidárias.",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 07",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83094"
+    },
+    {
+      "id": 83095,
+      "data": "2026-10-27T17:00",
+      "descricao": "Regulamentação e implementação da avaliação biopsicossocial para pessoas com diabetes\r\n REQ 166/2026 CSAUDE, da Deputada Flávia Morais\r\n\r\nConvidados confirmados:\r\n\r\nROBERTO PAULO DO VALE TINÉ (participação virtual)\r\nPresidente do Conselho Nacional dos Direitos da Pessoa com Deficiência (CONADE)\r\n\r\n\r\nConvidados (a confirmar):\r\n\r\nRepresentante do Ministério dos Direitos Humanos e da Cidadania;\r\n\r\nRepresentante do Ministério da Saúde;\r\n\r\nRepresentante doInstituto Nacional do Seguro Social (INSS);\r\n\r\nRepresentante da Sociedade Brasileira de Diabetes (SBD);\r\n\r\nEspecialista em Avaliação Biopsicossocial e Funcionalidade.",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 07",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83095"
+    }
+  ]
+}

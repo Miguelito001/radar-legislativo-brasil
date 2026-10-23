@@ -1,0 +1,327 @@
+{
+  "consultadoEm": "2026-10-23T13:04:24.746Z",
+  "origem": "camara",
+  "escopo": "Amostra das votações retornadas pela Câmara dos Deputados.",
+  "votacoes": [
+    {
+      "id": "2487836-52",
+      "data": "2026-10-15",
+      "descricao": "Aprovada a Redação Final assinada pelo relator, Dep. Rodrigo Valadares (PL/SE).",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2487836-52"
+    },
+    {
+      "id": "2487836-50",
+      "data": "2026-10-15",
+      "descricao": "Aprovada a Subemenda Substitutiva ao Projeto de Lei nº 1.123, de 2025, adotada pelo relator da Comissão de Saúde.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2487836-50"
+    },
+    {
+      "id": "2353617-81",
+      "data": "2026-10-15",
+      "descricao": "Aprovada a Redação Final assinada pela relatora, Dep. Detinha (PL/MA).",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2353617-81"
+    },
+    {
+      "id": "2353617-79",
+      "data": "2026-10-15",
+      "descricao": "Aprovado o Substitutivo do Senado Federal ao Projeto de Lei nº 1.435, de 2023.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2353617-79"
+    },
+    {
+      "id": "2634542-26",
+      "data": "2026-10-15",
+      "descricao": "Aprovada a Redação Final, assinada pelo relator, Dep. Doutor Luizinho (PP/RJ).",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2634542-26"
+    },
+    {
+      "id": "2634542-24",
+      "data": "2026-10-15",
+      "descricao": "Aprovada a Medida Provisória nº 1.370, de 2026, na forma do Projeto de Lei de Conversão.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2634542-24"
+    },
+    {
+      "id": "2634542-22",
+      "data": "2026-10-15",
+      "descricao": "Aprovado, em apreciação preliminar, o Parecer da Comissão Mista acerca dos pressupostos constitucionais de relevância e urgência e de sua adequação financeira e orçamentária, nos termos do artigo 8º da Resolução nº 01, de 2002-CN.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2634542-22"
+    },
+    {
+      "id": "2634542-8",
+      "data": "2026-10-15",
+      "descricao": "Aprovado o parecer na Comissão Mista",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2634542-8"
+    },
+    {
+      "id": "2236186-60",
+      "data": "2026-10-14",
+      "descricao": "Rejeitada a Subemenda Substitutiva ao Projeto de Lei Complementar nº 281, de 2019, adotada pelo relator da Comissão Especial. Sim: 252; Não: 176; Total: 428.",
+      "resultado": "",
+      "aprovacao": 0,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2236186-60"
+    },
+    {
+      "id": "2236186-52",
+      "data": "2026-10-14",
+      "descricao": "Rejeitado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 0,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2236186-52"
+    },
+    {
+      "id": "2635476-40",
+      "data": "2026-10-14",
+      "descricao": "Aprovada a Redação Final assinada pelo relator, Dep. Rubens Pereira Júnior (PT/MA).",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2635476-40"
+    },
+    {
+      "id": "2635476-36",
+      "data": "2026-10-14",
+      "descricao": "Aprovada a Subemenda Substitutiva Global ao Projeto de Lei Complementar nº 186, de 2026, adotada pelo relator da Comissão de Indústria, Comércio e Serviços, ressalvados os destaques. Sim: 461; Não: 4; Total: 465.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2635476-36"
+    },
+    {
+      "id": "2629764-26",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Parecer.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2629764-26"
+    },
+    {
+      "id": "2635476-23",
+      "data": "2026-10-14",
+      "descricao": "Rejeitado o Requerimento. Sim: 11; Não: 387; Total: 398.",
+      "resultado": "",
+      "aprovacao": 0,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2635476-23"
+    },
+    {
+      "id": "2647531-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647531-2"
+    },
+    {
+      "id": "2647530-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647530-2"
+    },
+    {
+      "id": "2647529-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647529-2"
+    },
+    {
+      "id": "2647528-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647528-2"
+    },
+    {
+      "id": "2647527-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647527-2"
+    },
+    {
+      "id": "2647521-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647521-2"
+    },
+    {
+      "id": "2647520-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647520-2"
+    },
+    {
+      "id": "2647519-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647519-2"
+    },
+    {
+      "id": "2647518-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647518-2"
+    },
+    {
+      "id": "2647517-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647517-2"
+    },
+    {
+      "id": "2647516-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647516-2"
+    },
+    {
+      "id": "2647515-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647515-2"
+    },
+    {
+      "id": "2647514-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647514-2"
+    },
+    {
+      "id": "2647493-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647493-2"
+    },
+    {
+      "id": "2647491-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647491-2"
+    },
+    {
+      "id": "2647487-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647487-2"
+    },
+    {
+      "id": "2647485-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647485-2"
+    },
+    {
+      "id": "2647483-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647483-2"
+    },
+    {
+      "id": "2647481-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2647481-2"
+    },
+    {
+      "id": "2629588-2",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Requerimento.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2629588-2"
+    },
+    {
+      "id": "2618580-20",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Parecer.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2618580-20"
+    },
+    {
+      "id": "2612367-22",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Parecer.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2612367-22"
+    },
+    {
+      "id": "2599356-25",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Parecer.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2599356-25"
+    },
+    {
+      "id": "2598627-23",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Parecer.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2598627-23"
+    },
+    {
+      "id": "2572628-23",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Parecer.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2572628-23"
+    },
+    {
+      "id": "2504284-23",
+      "data": "2026-10-14",
+      "descricao": "Aprovado o Parecer.",
+      "resultado": "",
+      "aprovacao": 1,
+      "url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2504284-23"
+    }
+  ]
+}
