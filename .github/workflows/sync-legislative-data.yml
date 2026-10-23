@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'scripts/collect.js'
+      - 'api/_lib/autoria.js'
       - '.github/workflows/sync-legislative-data.yml'
   workflow_dispatch:
   schedule:
