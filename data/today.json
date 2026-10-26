@@ -1,7 +1,7 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-10-26",
-  "consultadoEm": "2026-10-26T19:56:38.251Z",
+  "consultadoEm": "2026-10-26T23:52:06.990Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
@@ -17,6 +17,76 @@
     }
   ],
   "materias": [
+    {
+      "key": "camara:2648903",
+      "id": "2648903",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "RDF",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Redação Final ao PL 2123/2025",
+      "data": "2026-10-26T17:16",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648903",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648903"
+    },
+    {
+      "key": "camara:2648902",
+      "id": "2648902",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "RDF",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Redação Final ao PL 2228/2023",
+      "data": "2026-10-26T17:11",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648902",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648902"
+    },
+    {
+      "key": "camara:2648901",
+      "id": "2648901",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "RDF",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Redação Final ao PDL 92/2026",
+      "data": "2026-10-26T17:07",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648901",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648901"
+    },
+    {
+      "key": "camara:2648900",
+      "id": "2648900",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "RDF",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Redação Final ao PL 2507/2024",
+      "data": "2026-10-26T17:04",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648900",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648900"
+    },
+    {
+      "key": "camara:2648899",
+      "id": "2648899",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "SBT",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Parecer da Relatora, Dep. Carla Dickson (PL-RN), pela aprovação do PL 4894/23, e dos PLs 4948/23, 5509/23 e 2059/24, apensados, com substitutivo.",
+      "data": "2026-10-26T16:56",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648899",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648899"
+    },
     {
       "key": "camara:2648898",
       "id": "2648898",
@@ -81,7 +151,7 @@
       "tipo": "PRL",
       "numero": "1",
       "ano": "0",
-      "ementa": "Parecer da Relatora, Dep. Carla Dickson (PL-RN), pela aprovação deste, do PL 4948/2023, do PL 5509/2023, e do PL 2059/2024, apensados.",
+      "ementa": "Parecer da Relatora, Dep. Carla Dickson (PL-RN), pela aprovação do PL 4894/23 e dos PLs  4948/23,  5509/23 e 2059/24, apensados, com substitutivo.",
       "data": "2026-10-26T16:04",
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648897",
@@ -284,6 +354,19 @@
       "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648829"
     },
     {
+      "key": "senado:176098",
+      "id": "176098",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PET",
+      "numero": "00061",
+      "ano": "2026",
+      "ementa": "Oferece representação contra os Ministros do Supremo Tribunal Federal em exercício, com fundamento na Lei nº 1.079/1950, pelo resultado do julgamento do Agravo Regimental no Conflito de Competência nº 8.208 e da Reclamação nº 49.329.",
+      "data": "2026-10-26",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176098"
+    },
+    {
       "key": "senado:176097",
       "id": "176097",
       "origem": "senado",
@@ -395,7 +478,7 @@
       "tipo": "PET",
       "numero": "00060",
       "ano": "2026",
-      "ementa": "Oferece representação contra o Procurador-Geral da República, Paulo Gustavo Gonet Branco, os membros do Conselho Nacional de Justiça - CNJ e os membros do Conselho Nacional do Ministério Público - CNMP, com fundamento da Lei nº 1.079, de 1950",
+      "ementa": "Oferece representação contra o Procurador-Geral da República, Paulo Gustavo Gonet Branco, os membros do Conselho Nacional de Justiça e os membros do Conselho Nacional do Ministério Público em exercício, com fundamento da Lei nº 1.079, de 1950. ",
       "data": "2026-10-26",
       "situacao": "",
       "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176089"
