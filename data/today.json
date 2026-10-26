@@ -1,7 +1,7 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-10-26",
-  "consultadoEm": "2026-10-26T04:44:52.280Z",
+  "consultadoEm": "2026-10-26T12:59:55.363Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
@@ -11,7 +11,21 @@
     "camara-eventos"
   ],
   "falhas": [],
-  "materias": [],
+  "materias": [
+    {
+      "key": "senado:176081",
+      "id": "176081",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "REQ",
+      "numero": "00366",
+      "ano": "2026",
+      "ementa": "Requer nos termos dos arts. 13 e 215, I, “b”, do Regimento Internodo Senado Federal, em face do que dispõe o art.55, III, da Constituição Federal, licença para desempenhar missão política ou cultural de interesse parlamentar, sem ônus para o Senado Federal,",
+      "data": "2026-10-26",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176081"
+    }
+  ],
   "votacoes": [],
   "eventos": []
 }
