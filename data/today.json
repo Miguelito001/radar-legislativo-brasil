@@ -1,7 +1,7 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-10-27",
-  "consultadoEm": "2026-10-27T08:53:17.387Z",
+  "consultadoEm": "2026-10-27T12:09:36.054Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
@@ -11,7 +11,22 @@
     "camara-eventos"
   ],
   "falhas": [],
-  "materias": [],
+  "materias": [
+    {
+      "key": "camara:2648936",
+      "id": "2648936",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "EMR",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Reconhece como manifestação da cultura nacional o Festejo do Santuário Diocesano Nossa Senhora do Coco da Aparecida, no Estado do Maranhão.",
+      "data": "2026-10-27T09:07",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2648936",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2648936"
+    }
+  ],
   "votacoes": [],
   "eventos": [
     {
