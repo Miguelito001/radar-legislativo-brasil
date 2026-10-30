@@ -1,7 +1,7 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-10-30",
-  "consultadoEm": "2026-10-30T05:45:51.147Z",
+  "consultadoEm": "2026-10-30T19:21:05.643Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
@@ -11,7 +11,50 @@
     "camara-eventos"
   ],
   "falhas": [],
-  "materias": [],
+  "materias": [
+    {
+      "key": "camara:2649642",
+      "id": "2649642",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "RDF",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Redação Final ao PL 5981/2025",
+      "data": "2026-10-30T12:59",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2649642",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2649642"
+    },
+    {
+      "key": "camara:2649641",
+      "id": "2649641",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "RDF",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Redação Final ao PL 2861/2025",
+      "data": "2026-10-30T12:58",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2649641",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2649641"
+    },
+    {
+      "key": "camara:2649640",
+      "id": "2649640",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "RDF",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Redação Final ao PL 244/2019",
+      "data": "2026-10-30T12:57",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2649640",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2649640"
+    }
+  ],
   "votacoes": [],
   "eventos": []
 }
