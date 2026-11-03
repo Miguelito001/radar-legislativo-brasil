@@ -1,7 +1,7 @@
 {
   "formato": "radar-legislativo-hoje-v1",
-  "dia": "2026-11-02",
-  "consultadoEm": "2026-11-02T05:59:25.357Z",
+  "dia": "2026-11-03",
+  "consultadoEm": "2026-11-03T06:45:14.104Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
@@ -13,5 +13,69 @@
   "falhas": [],
   "materias": [],
   "votacoes": [],
-  "eventos": []
+  "eventos": [
+    {
+      "id": 83129,
+      "data": "2026-11-03T13:00",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 13",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83129",
+      "origem": "camara"
+    },
+    {
+      "id": 83034,
+      "data": "2026-11-03T14:00",
+      "descricao": "Implementação da Política Nacional de Minerais Críticos e Estratégicos (Lei 15.506/2026)\r\n Seminário - Implementação da Política Nacional de Minerais Críticos e Estratégicos (Lei 15.506/2026)\r\n\r\n\r\n(14h - 15h) Abertura: A Política Nacional de Minerais Críticos e Estratégicos (PNMCE) e o Desenvolvimento Nacional.\r\n\r\n\r\nMÁRCIO FERNANDO ELIAS ROSA, Ministro do Desenvolvimento, Indústria, Comércio e Serviços - MDIC (confirmado);\r\n\r\nZÉ SILVA, Deputado Federal e Presidente da Frente Parlamentar da Mineração (confirmado);\r\n\r\nKENISTON BRAGA, Deputado Federal e membro da Comissão de Minas e Energia (confirmado);\r\n\r\nMARIA TEREZA ALMEIDA CUNHA DE CASTRO, Especialista em Políticas e Indústria da Confederação Nacional da Indústria (CNI) (confirmada); e\r\n\r\nPABLO CESÁRIO, Diretor-Presidente do IBRAM (confirmado).\r\n\r\n\r\n\r\n(15h - 15h45) Painel 1: Decreto nº 13.118/2026, que regulamenta o Conselho Nacional para Industrialização de Minerais Críticos e Estratégicos.\r\n\r\n\r\nModerador: Dep. Arnaldo Jardim\r\n\r\nCARLOS LEONARDO TEOFILO DURANS, Secretário-Executivo do Conselho Nacional para Industrialização de Minerais Críticos e Estratégicos (CIMCE) do MDIC (confirmado);\r\n\r\nMARISA CESAR, Presidente do Conselho da Associação de Minerais Críticos - AMC (confirmada); e\r\n\r\nANDERSON ARRUDA, Secretário Nacional de Geologia, Mineração e Transformação Mineral do Ministério de Minas e Energia (confirmado).\r\n\r\n\r\n\r\n(15h45 - 16h30) Painel 2: O Fundo Garantidor da Atividade Mineral (FGAM) como instrumento de fomento.\r\n\r\n\r\nModerador: Dep. Arnaldo Jardim\r\n\r\nPEDRO PAULO DIAS MESQUITA, Gerente do Departamento de Indústria de Base e Extrativa do Banco Nacional de Desenvolvimento Econômico e Social (BNDES) (confirmado);\r\n\r\nFERNANDO CARMARGO, Diretor Financeiro da LCA Consultoria (confirmado);\r\n\r\nEDUARDO JOSÉ DO NASCIMENTO, Gerente de Soluções/Gerência de Garantidores e Novos Negócios em Fundos e Programas do Banco do Brasil (confirmado).\r\n\r\n\r\n\r\n(16h30 - 17h15) Painel 3: Agregação de Valor em Território Nacional: o Programa Federal de Beneficiamento e Transformação de Minerais Críticos e Estratégicos.\r\n\r\n\r\nModerador: Dep. Arnaldo Jardim\r\n\r\nJORGE BOEIRA, Analista da Unidade de Nova Economia e Indústria Verde da Agência Brasileira de Desenvolvimento Industrial (ABDI) (confirmado);\r\n\r\nRAFAEL RAMALHO DUBEUX, Assessor Especial do Ministro da Fazenda (confirmado).\r\n\r\nLUÍS MAURÍCIO AZEVEDO, Presidente do Conselho Diretor da Associação Brasileira das Empresas de Pesquisa Mineral e Mineração - ABPM (confirmado);\r\n\r\n\r\n\r\n\r\n(17h15 - 18h15) Painel 4: Rastreabilidade: Sustentabilidade e Mercado Global.\r\n\r\n\r\nModerador: Dep. Arnaldo Jardim\r\n\r\nMAURO HENRIQUE MOREIRA SOUSA, Diretor-Geral da Agência Nacional de Mineração (ANM) (confirmado);\r\n\r\nBRUNA TARGINO, Especialista em Transição Energética e Minerais Críticos do Instituto E+ Transição Energética (confirmada);\r\n\r\nMARCUS OLIVEIRA, Fundador da Circular Brain (confirmado);\r\n\r\nMÔNICA SODRÉ, CEO da Meridiana e Senior Fellow do CEBRI (confirmada).\r\n\r\n\r\n\r\n(18h15) - Encerramento\r\n\r\nDEPUTADO ARNALDO JARDIM, Presidente da Comissão sobre Transição Energética e Produção de Hidrogênio Verde.",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 14",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83034",
+      "origem": "camara"
+    },
+    {
+      "id": 83035,
+      "data": "2026-11-03T14:00",
+      "descricao": "Votação de requerimentos\r\n Deliberação de Requerimentos (estão sujeitos a pauta os requerimentos apresentados até 24h antes do horário da reunião)",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 09",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83035",
+      "origem": "camara"
+    },
+    {
+      "id": 83105,
+      "data": "2026-11-03T14:00",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 12",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83105",
+      "origem": "camara"
+    },
+    {
+      "id": 83054,
+      "data": "2026-11-03T14:30",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 01",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83054",
+      "origem": "camara"
+    },
+    {
+      "id": 83106,
+      "data": "2026-11-03T14:30",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 04",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83106",
+      "origem": "camara"
+    },
+    {
+      "id": 82787,
+      "data": "2026-11-03T15:00",
+      "descricao": "Discussão e votação de propostas legislativas",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 05",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/82787",
+      "origem": "camara"
+    }
+  ]
 }
