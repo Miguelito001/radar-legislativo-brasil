@@ -1,7 +1,7 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-11-06",
-  "consultadoEm": "2026-11-06T21:29:13.359Z",
+  "consultadoEm": "2026-11-07T01:55:10.631Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
@@ -151,6 +151,20 @@
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651317",
       "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651317"
+    },
+    {
+      "key": "camara:2651337",
+      "id": "2651337",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "REQ",
+      "numero": "49",
+      "ano": "2026",
+      "ementa": "Requer a realização de audiência pública para instruir a apreciação da PEC nº 32, de 2015, e de suas apensadas, que tratam da redução da maioridade penal. Convidados:  Doorgal Gustavo Borges de Andrada – desembargador do Tribunal de Justiça de Minas Gerais,  Rosana Agreli Melo Campos – mãe de Melissa Campos, assassinada a facadas por um colega em sala de aula, em Uberaba (MG),  Daniel Lacerda Campos – pai de Melissa Campos e coordenador da escola onde ocorreu o crime,  Marisa Agreli Melo – tia de Melissa Campos, Jane de Brito Vilhena de Moraes – mãe de Isaac Vilhena, morto a facadas por um adolescente durante o roubo de seu celular em Brasília (DF).",
+      "data": "2026-11-06T17:19",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651337",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651337"
     },
     {
       "key": "camara:2651312",
@@ -991,6 +1005,76 @@
       "situacao": "",
       "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651256",
       "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651256"
+    },
+    {
+      "key": "camara:2651336",
+      "id": "2651336",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "EMC",
+      "numero": "6",
+      "ano": "2026",
+      "ementa": "Estabelece alíquotas e normas complementares aplicáveis ao Imposto Seletivo para o ano-calendário de 2027, em Regime de Implementação Gradual.",
+      "data": "2026-11-06T00:00",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651336",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651336"
+    },
+    {
+      "key": "camara:2651335",
+      "id": "2651335",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "EMC",
+      "numero": "5",
+      "ano": "2026",
+      "ementa": "Emenda  à MPV 1399/2026 - Veículos automotores",
+      "data": "2026-11-06T00:00",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651335",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651335"
+    },
+    {
+      "key": "camara:2651334",
+      "id": "2651334",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "EMC",
+      "numero": "3",
+      "ano": "2026",
+      "ementa": "Emenda Mp 1399 motorista app",
+      "data": "2026-11-06T00:00",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651334",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651334"
+    },
+    {
+      "key": "camara:2651333",
+      "id": "2651333",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "EMC",
+      "numero": "2",
+      "ano": "2026",
+      "ementa": "Emenda Mp 1399",
+      "data": "2026-11-06T00:00",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651333",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651333"
+    },
+    {
+      "key": "camara:2651332",
+      "id": "2651332",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "EMC",
+      "numero": "4",
+      "ano": "2026",
+      "ementa": "Estabelece alíquotas e normas complementares aplicáveis ao Imposto Seletivo para o ano-calendário de 2027, em Regime de Implementação Gradual",
+      "data": "2026-11-06T00:00",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2651332",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2651332"
     },
     {
       "key": "senado:176241",
