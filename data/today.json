@@ -1,24 +1,41 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-11-10",
-  "consultadoEm": "2026-11-10T11:00:38.032Z",
+  "consultadoEm": "2026-11-10T12:38:09.112Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
-    "camara-proposicoes",
     "senado-apresentacoes"
   ],
   "falhas": [
     {
+      "fonte": "camara-proposicoes",
+      "erro": "Fonte oficial indisponível (HTTP 503)"
+    },
+    {
       "fonte": "camara-votacoes",
-      "erro": "The operation was aborted due to timeout"
+      "erro": "Fonte oficial indisponível (HTTP 503)"
     },
     {
       "fonte": "camara-eventos",
-      "erro": "The operation was aborted due to timeout"
+      "erro": "Fonte oficial indisponível (HTTP 503)"
     }
   ],
-  "materias": [],
+  "materias": [
+    {
+      "key": "senado:176259",
+      "id": "176259",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PLP",
+      "numero": "00289",
+      "ano": "2026",
+      "ementa": "Altera a Lei Complementar nº 64, de 18 de maio de 1990 (Lei das Inelegibilidades), para tornar inelegíveis, desde a condenação por órgão colegiado até o transcurso do prazo de 8 (oito) anos após o cumprimento da pena, os que forem condenados por crimes praticados mediante violência contra a mulher.",
+      "data": "2026-11-10",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176259"
+    }
+  ],
   "votacoes": [],
   "eventos": []
 }
