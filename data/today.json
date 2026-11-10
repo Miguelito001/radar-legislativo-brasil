@@ -1,144 +1,24 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-11-10",
-  "consultadoEm": "2026-11-10T04:06:22.154Z",
+  "consultadoEm": "2026-11-10T11:00:38.032Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
     "camara-proposicoes",
-    "senado-apresentacoes",
-    "camara-votacoes",
-    "camara-eventos"
+    "senado-apresentacoes"
   ],
-  "falhas": [],
+  "falhas": [
+    {
+      "fonte": "camara-votacoes",
+      "erro": "The operation was aborted due to timeout"
+    },
+    {
+      "fonte": "camara-eventos",
+      "erro": "The operation was aborted due to timeout"
+    }
+  ],
   "materias": [],
   "votacoes": [],
-  "eventos": [
-    {
-      "id": 83083,
-      "data": "2026-11-10T09:00",
-      "descricao": "Homenagem aos 50 anos da Abrasce – Associação Brasileira de Shopping Centers\r\n Homenagem aos 50 anos da Abrasce – Associação Brasileira de Shopping Centers",
-      "situacao": "Convocada",
-      "local": "Plenário da Câmara dos Deputados",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83083",
-      "origem": "camara"
-    },
-    {
-      "id": 83099,
-      "data": "2026-11-10T10:00",
-      "descricao": "Lançamento do pacto legislativo \"Saúde Não Se Aposta\"",
-      "situacao": "Convocada",
-      "local": "Auditório Freitas Nobre",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83099",
-      "origem": "camara"
-    },
-    {
-      "id": 83151,
-      "data": "2026-11-10T10:00",
-      "descricao": "Políticas públicas em saúde da mulher e oncologia\r\n REQ nº 13/2026 CSAUDE, do Dep. Giovani Cherini (PL/RS).\r\n\r\nConvidados confirmados:\r\n\r\n- Joana Jenkes (participação presencial)\r\nRepresentante da Federação Brasileira de Instituições Filantrópicas de Apoio à Saúde da Mama (FEMAMA);\r\n\r\n- Shirley Marshal Diaz Morales (participação presencial)\r\nConselheira Nacional de Saúde, da Coordenação da Comissão da Saúde da Mulher do Conselho Nacional de Saúde;\r\n\r\n- Rodrigo Lacerda (particpação remota)\r\nRepresentante do Conselho Nacional de Secretarias Municipais de  Saúde (CONASEMS);\r\n\r\n- Itamar Bento Claro (participação remota)\r\nRepresentante do Instituto Nacional de Câncer (INCA);\r\n\r\n- Ana Cristina Marques Martins (participação remota)\r\nGerente-Geral de Regulação Assistencial da Diretoria de Normas e Habilitação dos Produtos da Agência Nacional de Saúde Suplementar (ANS).\r\n\r\n- Mariana Seabra Souza Pereira (participação remota)\r\nCoordenadora-Geral de Atenção à Saúde das Mulheres, do Ministério da Saúde;\r\n\r\n- Raica Candeias (participação remota)\r\nConsultora técnica na Coordenação-Geral de Atenção ao Câncer, do Ministério da Saúde.\r\n\r\n\r\nConvidados não confirmados:\r\n\r\nRepresentante do Conselho Nacional de Secretários de Saúde (CONASS).",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 07",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83151",
-      "origem": "camara"
-    },
-    {
-      "id": 83084,
-      "data": "2026-11-10T11:00",
-      "descricao": "Homenagem aos 100 anos do Grupo Mercadinho São Luiz - MSLZ\r\n Homenagem aos 100 anos do Grupo Mercadinho São Luiz - MSLZ",
-      "situacao": "Convocada",
-      "local": "Plenário da Câmara dos Deputados",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83084",
-      "origem": "camara"
-    },
-    {
-      "id": 83155,
-      "data": "2026-11-10T13:00",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 13",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83155",
-      "origem": "camara"
-    },
-    {
-      "id": 83160,
-      "data": "2026-11-10T14:00",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 12",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83160",
-      "origem": "camara"
-    },
-    {
-      "id": 83164,
-      "data": "2026-11-10T14:00",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 08",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83164",
-      "origem": "camara"
-    },
-    {
-      "id": 83198,
-      "data": "2026-11-10T14:00",
-      "descricao": "Audiência pública e votação de requerimentos\r\n <p><strong>Tema</strong>: Turismo sexual, exploração em rodovias federais e cadeias de aliciamento de crianças e adolescentes.</p><p></p><p><strong>A - Audiência Pública</strong></p><p></p><p><strong>Convidados:</strong></p><p></p><p>1) FERNANDA SOUZA CARLOS | PRF (Confirmada)</p><p>&nbsp;&nbsp;&nbsp;Coordenadora-Geral de Direitos Humanos</p><p>&nbsp;&nbsp;&nbsp;Polícia Rodoviária Federal</p><p></p><p>2) GUSTAVO COSTA FELICIANO (a Confirmar)</p><p>&nbsp;&nbsp;&nbsp;Ministro de Estado do Turismo</p><p>&nbsp;&nbsp;&nbsp;Ministério do Turismo</p><p></p><p>3) BRUNO GIOVANNI DOS REIS (a Confirmar)</p><p>&nbsp;&nbsp;&nbsp;Diretor-Presidente da Agência Brasileira de Promoção Internacional do Turismo - Embratur</p><p>&nbsp;&nbsp;&nbsp;Agência Brasileira de Promoção Internacional do Turismo - Embratur</p><p></p><p>4) FERNANDA BRITO PEREIRA (Confirmada)</p><p>&nbsp;&nbsp;&nbsp;Procuradora Regional do Trabalho (PRT 23ª) e Coordenadora Nacional de Combate ao Trabalho Infantil e de Promoção e Defesa dos Direitos de Crianças e Adolescentes - COORDINFÂNCIA</p><p>&nbsp;&nbsp;&nbsp;Ministério Público do Trabalho - MPT</p><p></p><p>5) REGINA COELI CALIL LUSTOZA LEÃO (a Confirmar)</p><p>&nbsp;&nbsp;&nbsp;Coordenadora da Pastoral do Menor</p><p>&nbsp;&nbsp;&nbsp;Pastoral do Menor</p><p></p><p>6) LAÍS ZASNICOFF (a Confirmar)</p><p>&nbsp;&nbsp;&nbsp;Diretora-Executiva da Childhood Brasil</p><p>&nbsp;&nbsp;&nbsp;Childhood Brasil</p><p></p><p>(Requerimento nº 25/2026, do Dep. Fernando Rodolfo)</p><p></p><p><strong>B - Deliberação de Requerimentos</strong> (estão sujeitos à pauta os requerimentos apresentados até 24h antes do início da Reunião)</p><p></p><p></p>",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 03",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83198",
-      "origem": "camara"
-    },
-    {
-      "id": 83211,
-      "data": "2026-11-10T14:00",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 06",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83211",
-      "origem": "camara"
-    },
-    {
-      "id": 83221,
-      "data": "2026-11-10T14:00",
-      "descricao": "Discussão e votação do parecer do relator.",
-      "situacao": "Cancelada",
-      "local": "Anexo II, Plenário 04",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83221",
-      "origem": "camara"
-    },
-    {
-      "id": 83183,
-      "data": "2026-11-10T14:30",
-      "descricao": "Redução da maioridade penal\r\n Audiência Pública\r\nConvidados:\r\nPAULO GARRIDO MODESTO, Secretário de Assuntos Legislativo do MJSP, representante do Ministro da Justiça e Segurança Pública (REQ 2/2026) - (confirmado);\r\nPAULO GUSTAVO GONET BRANCO, Presidente do Conselho Nacional do Ministério Público (REQ 4/2026) - (a confirmar);\r\nKATY BRAUN DO PRADO, Presidente da Associação Brasileira dos Magistrados da Infância e da Juventude - ABRAMINJ (REQ 4/2026) - (confirmada);\r\nSIRO DARLAN DE OLIVEIRA, Desembargador aposentado e Vice-Presidente da Academia Brasileira de Letras do Cárcere - ABLC (REQ 31/2026) - (confirmado).\r\n\r\n\r\n(Requerimento nºs 2, 4/2026, do Deputado Capitão Alden)\r\n(Requerimento nº 31/2026, do Deputado Renildo Calheiros)",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 09",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83183",
-      "origem": "camara"
-    },
-    {
-      "id": 83192,
-      "data": "2026-11-10T14:30",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 01",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83192",
-      "origem": "camara"
-    },
-    {
-      "id": 83228,
-      "data": "2026-11-10T14:30",
-      "descricao": "Continuação - Dicussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 02",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83228",
-      "origem": "camara"
-    },
-    {
-      "id": 81022,
-      "data": "2026-11-10T15:00",
-      "descricao": "Cerimônia de Entrega do Prêmio Paulo Gustavo aos agraciados de 2026\r\n Os ganhadores do ano de 2026 são (em ordem alfabética):\n\n \n\r\n\r\n-     Ana Carolina Delgado Cunha (Carol Delgado)\n\n\r\n\r\n-     Clarice Falcão\n\n\r\n\r\n-     Clube Dazminina\n\n\r\n\r\n-     Fábio Porchat\n\n\r\n\r\n-     Marcus Majella",
-      "situacao": "Convocada",
-      "local": "",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/81022",
-      "origem": "camara"
-    }
-  ]
+  "eventos": []
 }
