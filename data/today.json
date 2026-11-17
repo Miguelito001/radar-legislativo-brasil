@@ -1,170 +1,65 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-11-17",
-  "consultadoEm": "2026-11-17T11:42:28.151Z",
+  "consultadoEm": "2026-11-17T13:23:24.248Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
-    "camara-proposicoes",
-    "senado-apresentacoes",
-    "camara-votacoes",
-    "camara-eventos"
+    "senado-apresentacoes"
   ],
-  "falhas": [],
+  "falhas": [
+    {
+      "fonte": "camara-proposicoes",
+      "erro": "The operation was aborted due to timeout"
+    },
+    {
+      "fonte": "camara-votacoes",
+      "erro": "The operation was aborted due to timeout"
+    },
+    {
+      "fonte": "camara-eventos",
+      "erro": "The operation was aborted due to timeout"
+    }
+  ],
   "materias": [
     {
-      "key": "camara:2654298",
-      "id": "2654298",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "22",
+      "key": "senado:176385",
+      "id": "176385",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "REQ",
+      "numero": "00036",
       "ano": "2026",
-      "ementa": "Requer emenda aditiva de texto ao Corpo da Lei, Cap V, Seção II, Subseção I, Art 90, § 5 do PLN nº 2, de 2026-CN.",
-      "data": "2026-11-17T08:28",
+      "ementa": "Requer, nos termos do art. 71 da Constituição Federal, do art. 102-A, inciso I, alínea a, do Regimento Interno do Senado Federal, que a Comissão de Transparência, Governança, Fiscalização e Controle e Defesa do Consumidor encaminhe Consulta ao Tribunal de Contas da União – TCU, acerca da interpretação do art. 25 da Lei nº 13.681, de 18 de junho de 2018, especialmente quanto ao cômputo do tempo de carreira e de cargo para fins de aposentadoria dos servidores oriundos dos ex-Territórios Federais de Roraima, Amapá e Rondônia transpostos para os quadros da União.",
+      "data": "2026-11-17",
       "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654298",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654298"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176385"
     },
     {
-      "key": "camara:2654297",
-      "id": "2654297",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SBR",
-      "numero": "2",
-      "ano": "0",
-      "ementa": "",
-      "data": "2026-11-17T08:22",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654297",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654297"
-    },
-    {
-      "key": "camara:2654296",
-      "id": "2654296",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SBR",
-      "numero": "1",
-      "ano": "0",
-      "ementa": "",
-      "data": "2026-11-17T08:22",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654296",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654296"
-    },
-    {
-      "key": "camara:2654295",
-      "id": "2654295",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "21",
+      "key": "senado:176384",
+      "id": "176384",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "REQ",
+      "numero": "00049",
       "ano": "2026",
-      "ementa": "Requer o acréscimo de meta para ampliar a infraestrutura das Unidades Básicas de Saúde (Programa: 5119 / Objetivo específico: 0378 / Indicador: Número de Unidades Básicas de Saúde (UBS) estruturadas com investimento em obras, equipamentos e materiais permanentes / Acréscimos: 42.535).",
-      "data": "2026-11-17T08:11",
+      "ementa": "Requer, nos termos do art. 58, § 2º, II, da Constituição Federal e do art. 93, II, do Regimento Interno do Senado Federal, a realização de audiência pública no âmbito desta Comissão de Educação para debater o uso da inteligência artificial (IA) na educação brasileira, com foco no conteúdo, nos impactos e nos desafios de implementação das Diretrizes para a Utilização da Inteligência Artificial na Educação Brasileira, aprovadas pelo Conselho Pleno do Conselho Nacional de Educação (CNE), por meio do Parecer CNE/CP nº 15/2026, cuja súmula foi publicada no Diário Oficial da União em 6 de outubro de 2026 e que aguarda homologação pelo Ministério da Educação.",
+      "data": "2026-11-17",
       "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654295",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654295"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176384"
     },
     {
-      "key": "camara:2654294",
-      "id": "2654294",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "20",
+      "key": "senado:176383",
+      "id": "176383",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "PL",
+      "numero": "05866",
       "ano": "2026",
-      "ementa": "Requer o acréscimo de meta  para  reduzir as filas de espera de procedimentos eletivos de atenção especializada em saúde, visando promover a ampliação de acesso em tempo oportuno. (Programa: 5118 / Objetivo específico: 0470 / Indicador: Taxa de expansão nacional da oferta de cirurgias eletivas na Atenção Especializada à Saúde / Acréscimos: 35%).",
-      "data": "2026-11-17T08:09",
+      "ementa": "Altera a Lei nº 9.250, de 26 de dezembro de 1995, para limitar a dedução das despesas com saúde da base de cálculo do Imposto sobre a Renda das Pessoas Físicas (IRPF).",
+      "data": "2026-11-17",
       "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654294",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654294"
-    },
-    {
-      "key": "camara:2654292",
-      "id": "2654292",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "19",
-      "ano": "2026",
-      "ementa": "Requer o acréscimo de meta para ampliar a infraestrutura das Unidades Básicas de Saúde (Programa: 5119 / Objetivo específico: 0378 / Acréscimos: 42.000).",
-      "data": "2026-11-17T08:03",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654292",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654292"
-    },
-    {
-      "key": "camara:2654290",
-      "id": "2654290",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "18",
-      "ano": "2026",
-      "ementa": "Requer alteração de texto no Corpo da Lei, Cap XI, Seção I, Art 159, § 1, Inciso I, Alínea q do PLN nº 2, de 2026-CN.",
-      "data": "2026-11-17T07:56",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654290",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654290"
-    },
-    {
-      "key": "camara:2654289",
-      "id": "2654289",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "17",
-      "ano": "2026",
-      "ementa": "Requer emenda aditiva de texto ao Corpo da Lei, Cap IV, Seção V, Art 44, § 12 do PLN nº 2, de 2026-CN.",
-      "data": "2026-11-17T07:48",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654289",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654289"
-    },
-    {
-      "key": "camara:2654288",
-      "id": "2654288",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "16",
-      "ano": "2026",
-      "ementa": "Requer emenda aditiva de texto ao Corpo da Lei, Cap IV, Seção V, Art 44, § 12 do PLN nº 2, de 2026-CN.",
-      "data": "2026-11-17T07:44",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654288",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654288"
-    },
-    {
-      "key": "camara:2654287",
-      "id": "2654287",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "15",
-      "ano": "2026",
-      "ementa": "Requer a substituição de texto no Anexo III.",
-      "data": "2026-11-17T07:37",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654287",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654287"
-    },
-    {
-      "key": "camara:2654286",
-      "id": "2654286",
-      "origem": "camara",
-      "casa": "Câmara",
-      "tipo": "SLD",
-      "numero": "14",
-      "ano": "2026",
-      "ementa": "Requer a substituição de texto no Anexo III do PLN nº 2, de 2026-CN.",
-      "data": "2026-11-17T07:37",
-      "situacao": "",
-      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2654286",
-      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2654286"
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176383"
     },
     {
       "key": "senado:176382",
@@ -181,195 +76,5 @@
     }
   ],
   "votacoes": [],
-  "eventos": [
-    {
-      "id": 83214,
-      "data": "2026-11-17T09:30",
-      "descricao": "Comemoração dos 35 anos da Lei nº 8.248, de 23 de outubro de 1991 (Lei de TICs)\r\n PALESTRANTES:\r\n\r\n\r\nLUCIANA SANTOS\r\nMinistra de Estado de Ciência, Tecnologia e Inovação\r\n(Presença confirmada)\r\n\r\nRODRIGO ZERBONE LOUREIRO\r\nSecretário Executivo do Ministério do Desenvolvimento, Indústria, Comércio e Serviços (Mdic)\r\n(Presença confirmada)\r\n\r\nROSILDA PRATES\r\nPresidente Executiva e Diretora Executiva da Associação de Empresas de Desenvolvimento Tecnológico Nacional e Inovação (P&D Brasil)\r\n(Presença confirmada)\r\n\r\nHUMBERTO BARBATO\r\nPresidente Executivo da Associação Brasileira da Indústria Elétrica e Eletrônica (Abinee)\r\n(Presença confirmada)\r\n\r\nROGÉRIO NUNES\r\nPresidente da Associação Brasileira da Indústria de Semicondutores (Abisemi)\r\n(Presença confirmada)\r\n\r\nJAMIR DAGIR JR.\r\nPresidente da Associação Brasileira das Instituições de Dispositivos Médicos (Abimo)\r\n(Não comparecerá - ausência justificada)\r\nRepresentante:\r\nMÁRCIO BOSIO\r\nDiretor Institucional da Associação Brasileira das Instituições de Dispositivos Médicos (Abimo)\r\n(Presença confirmada)\r\n\r\nDIEGO SILVA MENEZES\r\nPresidente da Associação Brasileira das Instituições de Pesquisa Tecnológica e Inovação (Abipti)\r\n(Presença confirmada)\r\n\r\nMARCOS MARQUES\r\nPresidente da Associação Brasileira de Consultorias de Fomento à Inovação (AC Inova)\r\n(Presença confirmada)\r\n\r\n\r\nRequerimento n° 46/2026, do Deputado Vitor Lippi)",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 01",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83214",
-      "origem": "camara"
-    },
-    {
-      "id": 83161,
-      "data": "2026-11-17T10:00",
-      "descricao": "Setembro Vermelho e as doenças cardiovasculares\r\n Requerimento nº 94/2026, do dep. Giovani Cherini, posteriormente aditado pelos Requerimentos nº 103, 123, 190 e 200/2026 CSAUDE.\r\n\r\n\r\nConvidados confirmados:\r\n\r\n\r\n- Fernando Antônio Lucchese (participação presencial)\r\nMédico cardiologista e cirurgião cardiovascular;\r\n\r\n- Cristiano Faria Pisani (participação presencial)\r\nPresidente da Sociedade Brasileira de Arritmias Cardíacas - SOBRAC;\r\n\r\n- Fernanda Mangione (participação remota)\r\nMédica Especialista em Hemodinâmica e Cardiologia Intervencionista;\r\n\r\n- Álvaro Avezum (participação remota)\r\nMembro do Conselho Administrativo da Sociedade Brasileira de Cardiologia - SBC;\r\n\r\n- Maria Sanali (participação remota)\r\nDiretora de Qualidade Profissional da Sociedade Brasileira de Hemodinâmica e Cardiologia Intervencionista - SBHCI;\r\n\r\n- Felipe Dias de Carvalho (participação remota)\r\nDiretor de Relações Institucionais e Governamentais de Brasília da Associação Brasileira da Indústria de Tecnologia para Saúde - ABIMED;\r\n\r\n- Felipe Augusto Reque (participação remota)\r\nCoordenador-Geral de Urgência do Ministério da Saúde.\r\n\r\n- Bruno Sepulveda\r\nRepresentante da Sociedade Brasileira de Cirurgia Cardiovascular - SBCCV;\r\n\r\n\r\nConvidados não confirmados:\r\n\r\n\r\n- Maurício Prudente\r\nMédico Cardiologista Intervencionista.",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 07",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83161",
-      "origem": "camara"
-    },
-    {
-      "id": 83102,
-      "data": "2026-11-17T11:00",
-      "descricao": "Homenagem aos 60 anos da instituição do Fundo de Garantia do Tempo de Serviço (FGTS)\r\n Homenagem aos 60 anos da instituição do Fundo de Garantia do Tempo de Serviço (FGTS)",
-      "situacao": "Convocada",
-      "local": "Plenário da Câmara dos Deputados",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83102",
-      "origem": "camara"
-    },
-    {
-      "id": 83249,
-      "data": "2026-11-17T13:00",
-      "descricao": "Definição das emendas da comissão ao Projeto de Lei Orçamentária Anual para 2027 e ao Projeto de Lei de Diretrizes Orçamentárias para 2027\r\n Definição das emendas da comissão ao Projeto de Lei Orçamentária Anual para 2027 e ao Projeto de Lei de Diretrizes Orçamentárias para 2027",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 13",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83249",
-      "origem": "camara"
-    },
-    {
-      "id": 83323,
-      "data": "2026-11-17T13:20",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 13",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83323",
-      "origem": "camara"
-    },
-    {
-      "id": 83363,
-      "data": "2026-11-17T13:55",
-      "descricao": "Sessão Deliberativa Extraordinária Semipresencial (AM nº 123/2020)",
-      "situacao": "Convocada",
-      "local": "Plenário da Câmara dos Deputados",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83363",
-      "origem": "camara"
-    },
-    {
-      "id": 83255,
-      "data": "2026-11-17T14:00",
-      "descricao": "Votação das emendas da comissão à LDO 2027 e à LOA 2027",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 08",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83255",
-      "origem": "camara"
-    },
-    {
-      "id": 83258,
-      "data": "2026-11-17T14:00",
-      "descricao": "Apresentação do Relatório Final e Audiência Pública sobre o Auxílio Emergencial: Direito dos Atingidos da Bacia do Rio Paraopeba\r\n <p><strong>A - Apresentação do Relatório Final da Comissão</strong></p><p></p><p><strong>B - Audiência Pública</strong></p><p></p><p></p><p><strong>Tema:</strong> \"Auxílio Emergencial: Direito dos Atingidos da Bacia do Rio Paraopeba\".</p><p></p><p></p><p><strong>Convidados:</strong></p><p></p><p></p><p>GUILHERME BOULOS, Ministro da Secretaria-Geral da Presidência da República - (a confirmar);</p><p></p><p>SENADOR CLEITINHO, <span style=\"font-size: 12pt; line-height: 115%; font-family: Aptos, sans-serif;\">Governador eleito do Estado de Minas Gerais </span>- (a confirmar);</p><p></p><p>TARCIJANY LINHARES AGUIAR MACHADO, Defensora Pública-Geral Federal - (a confirmar);</p><p></p><p>EDUARDO NEPOMUCENO, Procurador de Justiça do Ministério Público do Estado de Minas Gerais<span style=\"font-size: 12pt; line-height: 115%; font-family: Aptos, sans-serif;\"> </span>- (a confirmar);</p><p></p><p>PROFESSORA ANDRESA, Prefeita do Município de Mário Campos - MG (a confirmar);</p><p></p><p>GABRIEL PARREIRAS, Prefeito do Município de Brumadinho - MG (a confirmar); e</p><p></p><p>JOCELI ANDRIOLI, Coordenador Nacional do Movimento dos Atingidos por Barragens (MAB) - (a confirmar).</p><p></p><p></p><p></p><p>(Requerimento n° 1/2023, do Deputado Rogério Correia)</p>",
-      "situacao": "Cancelada",
-      "local": "Anexo II, Plenário 10",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83258",
-      "origem": "camara"
-    },
-    {
-      "id": 83259,
-      "data": "2026-11-17T14:00",
-      "descricao": "Discussão e votação de propostas legislativas e definição das emendas da Comissão ao PLOA 2027 e ao PLDO 2027",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 12",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83259",
-      "origem": "camara"
-    },
-    {
-      "id": 83295,
-      "data": "2026-11-17T14:00",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 14",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83295",
-      "origem": "camara"
-    },
-    {
-      "id": 83331,
-      "data": "2026-11-17T14:00",
-      "descricao": "Votação das emendas da comissão à LDO e à LOA para 2027",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 06",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83331",
-      "origem": "camara"
-    },
-    {
-      "id": 83262,
-      "data": "2026-11-17T14:15",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 06",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83262",
-      "origem": "camara"
-    },
-    {
-      "id": 83251,
-      "data": "2026-11-17T14:30",
-      "descricao": "Discussão e votação de proposições legislativas\r\n Pauta sujeita a alterações.",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 08",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83251",
-      "origem": "camara"
-    },
-    {
-      "id": 83263,
-      "data": "2026-11-17T14:30",
-      "descricao": "Redução da maioridade penal\r\n Audiência Pública\r\nTema: Redução da maioridade penal\r\n\r\nConvidados:\r\nRODOLFO QUEIROZ LATERZA,  Presidente da Associação Brasileira dos Delegados de Polícia do Brasil - ADEPOL  (REQ 58 e 59) - (Confirmado);  \r\n\r\nJOÃO HENRIQUE MARTINS, Cientista político, mestre em Ciência Política e especialista em economia ilícita e políticas de controle do crime (REQ 48 e 56/2026) - (Confirmado);\r\n   \r\nRODRIGO RIBEIRO DE SOUSA, professor e pesquisador da Unicamp (REQ 13/2026) -  (Confirmado); \r\n\r\nROBERTA PONTES,  Presidente da União Brasileira dos Estudantes Secundaristas - UBES (REQ 25/2026) (Confirmada).\r\n  \r\n(REQ 13/2026, da Deputada Talíria Petrone)\r\n(REQ 25/2026, do Deputado Orlando Silva)\r\n(REQ 48/2026, do Deputado Paulo Bilynskyj)\r\n(REQ 56 e 59/2026, do Deputado Mendonça Filho)\r\n(REQ 58/2026, do Deputado Marcel van Hatten)",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 03",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83263",
-      "origem": "camara"
-    },
-    {
-      "id": 83282,
-      "data": "2026-11-17T14:30",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 01",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83282",
-      "origem": "camara"
-    },
-    {
-      "id": 83184,
-      "data": "2026-11-17T15:00",
-      "descricao": "Impactos econômicos e mecanismos de combate à pirataria e falsificação nos mercados de bebidas e cigarros\r\n • EDUARDO CIDADE, Presidente da Associação Brasileira de Bebidas Destiladas (ABBD) - REQ. 1/2026 (presença confirmada); \r\n• SAMUEL RIVERO, Especialista em Segurança Pública da Federação das Indústrias do Estado do Rio de Janeiro - Firjan - REQ. 1/2026 (presença confirmada); \r\n• CRISTIANE FOJA, Presidente-Executiva da Associação Brasileira de Bebidas - ABRABE - REQ. 16/2026 (presença confirmada);  \r\n• VICENTE BASTOS, Presidente Executivo do Instituto Brasileiro da Cachaça - IBRAC - REQ. 24/2026 (presença confirmada);\r\n• EDIMILSON ALVES, Diretor-Executivo da Associação Brasileira da Indústria do Fumo - ABIFUMO - REQ 21/2026 (presença confirmada); \r\n• JORGE PONTES, delegado da PF aposentado, pesquisador e consultor em segurança pública - REQ 22/2026 (presença confirmada); \r\n• ANDRÉIA KOHOUT, diretora da Associação Brasileira de Combate à Falsificação (ABCF) - REQ 22/2026 (presença confirmada); \r\n• JOSÉ SAVOIA, doutor em Administração e professor da Universidade de São Paulo - USP - REQ 22/2026 (presença confirmada) e\r\n• LUCIANO FIGUEIREDO, Vice-Presidente do Conselho Regional de Química - 12ª Região (presença confirmada). \r\n\r\n\r\nREQ. 1/2026 - Dep. Julio Lopes\r\nREQ. 16/2026 - Dep. Julio Lopes\r\nREQ. 21/2026 - Dep. Julio Lopes\r\nREQ. 22/2026 - Dep. Julio Lopes",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 04",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83184",
-      "origem": "camara"
-    },
-    {
-      "id": 83250,
-      "data": "2026-11-17T15:00",
-      "descricao": "Definição das emendas da comissão ao Projeto de Lei Orçamentária Anual para 2027",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 05",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83250",
-      "origem": "camara"
-    },
-    {
-      "id": 83276,
-      "data": "2026-11-17T15:00",
-      "descricao": "Definição das emendas ao Projeto de Lei  Diretrizes Orçamentárias e ao Projeto de Lei Orçamentaria  Anual de 2027  \r\n Votação das sugestões de emendas ao Projeto de Lei  Diretrizes Orçamentárias e ao Projeto de Lei do Orçamento  Anual de 2027",
-      "situacao": "Convocada",
-      "local": "A Definir",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83276",
-      "origem": "camara"
-    },
-    {
-      "id": 82973,
-      "data": "2026-11-17T15:30",
-      "descricao": "Sistema de Educação Inclusiva \r\n 1) LUCELMO LACERDA (Paticipação confirmada) - Professor, escritor, doutor em Educação, pós-doutor em Psicologia, especialista em TEA;\r\n\r\n2) NATALIA RAQUEL RIBEIRO ARAÚJO (Participação confirmada) - Secretária Municipal de Educação de Belo Horizonte/MG, professora, mestre em Direito e especialista em Gestão Pública;\r\n\r\n3) OLZENI RIBEIRO (Participação confirmada) - Neuropsicopedagoga, neuropsicólogoa e especialista em Superdotação e Dupla Excepcionalidade.\r\n\r\n(REQ 68/2026 CE, da deputada Soraya Santos; REQ 72/2026 CE, da deputada Soraya Santos)",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 10",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/82973",
-      "origem": "camara"
-    },
-    {
-      "id": 83330,
-      "data": "2026-11-17T15:30",
-      "descricao": "Discussão e votação de propostas legislativas",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 05",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83330",
-      "origem": "camara"
-    },
-    {
-      "id": 83321,
-      "data": "2026-11-17T17:30",
-      "descricao": "Reunião com o Ministro do Supremo Tribunal Federal Gilmar Mendes  - Auxílio Emergencial às populações atingidas pelo rompimento da barragem de Brumadinho/MG\r\n <table style=\"min-width: 25px;\"><colgroup><col style=\"min-width: 25px;\"></colgroup><tbody><tr><td colspan=\"1\" rowspan=\"1\"><ul style=\"list-style-type: none; padding: 0px; margin: 0px;\"><li><p><strong>Reunião dos membros da Comissão com o Ministro do Supremo Tribunal Federal Gilmar Mendes</strong></p></li></ul></td></tr></tbody></table><p></p><p><strong>Tema:</strong> ADPF nº 1314 – Auxílio Emergencial às populações atingidas pelo rompimento da barragem de Brumadinho/MG</p><p></p><p></p><p></p><p></p><p></p>",
-      "situacao": "Convocada",
-      "local": "",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83321",
-      "origem": "camara"
-    }
-  ]
+  "eventos": []
 }
