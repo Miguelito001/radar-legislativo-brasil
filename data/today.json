@@ -1,27 +1,54 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-11-19",
-  "consultadoEm": "2026-11-19T10:19:21.488Z",
+  "consultadoEm": "2026-11-19T11:29:01.709Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
-    "senado-apresentacoes"
+    "camara-proposicoes",
+    "senado-apresentacoes",
+    "camara-votacoes",
+    "camara-eventos"
   ],
-  "falhas": [
-    {
-      "fonte": "camara-proposicoes",
-      "erro": "The operation was aborted due to timeout"
-    },
-    {
-      "fonte": "camara-votacoes",
-      "erro": "The operation was aborted due to timeout"
-    },
-    {
-      "fonte": "camara-eventos",
-      "erro": "The operation was aborted due to timeout"
-    }
-  ],
+  "falhas": [],
   "materias": [],
   "votacoes": [],
-  "eventos": []
+  "eventos": [
+    {
+      "id": 83213,
+      "data": "2026-11-19T09:00",
+      "descricao": "Mesa-redonda na Universidade Federal da Bahia\r\n Requerimento n. 85/2026\r\n\r\nAutora: Dep. Alice Portugal\r\n\r\nConvidados:\r\n\r\n- Reitoria da UFBA;\r\n\r\n\n- União dos Estudantes da Bahia (UEB);\n\r\n\r\n- União Nacional dos Estudantes (UNE);\r\n\r\n\n- Polícia Federal;\n\r\n\r\n- Secretaria de Segurança Pública do Estado da Bahia",
+      "situacao": "Convocada",
+      "local": "",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83213",
+      "origem": "camara"
+    },
+    {
+      "id": 83364,
+      "data": "2026-11-19T09:00",
+      "descricao": "Efeitos da Redução da Jornada de Trabalho",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 03",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83364",
+      "origem": "camara"
+    },
+    {
+      "id": 83294,
+      "data": "2026-11-19T10:00",
+      "descricao": "Req 32 - Financiamento do Programa Nacional de Proteção e Manejo Populacional Ético de Cães e Gatos (ProPatinhas) e o fortalecimento do SinPatinhas no Orçamento da União de 2027.",
+      "situacao": "Convocada",
+      "local": "Anexo II, Plenário 02",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83294",
+      "origem": "camara"
+    },
+    {
+      "id": 83337,
+      "data": "2026-11-19T10:00",
+      "descricao": "Homenagem aos 60 anos da Embratur",
+      "situacao": "Convocada",
+      "local": "Plenário do Senado Federal",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83337",
+      "origem": "camara"
+    }
+  ]
 }
