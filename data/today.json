@@ -1,16 +1,26 @@
 {
   "formato": "radar-legislativo-hoje-v1",
-  "dia": "2026-11-22",
-  "consultadoEm": "2026-11-22T09:45:53.862Z",
+  "dia": "2026-11-23",
+  "consultadoEm": "2026-11-23T07:35:06.756Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
-    "camara-proposicoes",
-    "senado-apresentacoes",
-    "camara-votacoes",
-    "camara-eventos"
+    "senado-apresentacoes"
   ],
-  "falhas": [],
+  "falhas": [
+    {
+      "fonte": "camara-proposicoes",
+      "erro": "The operation was aborted due to timeout"
+    },
+    {
+      "fonte": "camara-votacoes",
+      "erro": "The operation was aborted due to timeout"
+    },
+    {
+      "fonte": "camara-eventos",
+      "erro": "The operation was aborted due to timeout"
+    }
+  ],
   "materias": [],
   "votacoes": [],
   "eventos": []
