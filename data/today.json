@@ -1,7 +1,7 @@
 {
   "formato": "radar-legislativo-hoje-v1",
   "dia": "2026-11-26",
-  "consultadoEm": "2026-11-26T10:51:51.099Z",
+  "consultadoEm": "2026-11-26T12:16:29.075Z",
   "fuso": "America/Sao_Paulo",
   "escopo": "Apenas apresentações de matérias, votações e eventos com data do dia no horário de Brasília; não representa todas as tramitações federais. Senado: apresentações entre matérias atualizadas. Sem cobertura integral de votações e eventos do Senado ou de matérias do Congresso Nacional.",
   "fontesConsultadas": [
@@ -11,7 +11,49 @@
     "camara-eventos"
   ],
   "falhas": [],
-  "materias": [],
+  "materias": [
+    {
+      "key": "camara:2660089",
+      "id": "2660089",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "SBT",
+      "numero": "1",
+      "ano": "0",
+      "ementa": "Estabelece ações emergenciais e temporárias destinadas às empresas exportadoras de setores comprovadamente afetados pela alíquota adicional ad valorem de 40% aplicada sobre as tarifas de 10% que já estavam em vigor para os produtos exportados pelo Brasil aos Estados Unidos da América, com o objetivo de minorar os efeitos negativos decorrentes de sua aplicação, principalmente com relação à manutenção de empregos.",
+      "data": "2026-11-26T09:00",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2660089",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2660089"
+    },
+    {
+      "key": "camara:2660090",
+      "id": "2660090",
+      "origem": "camara",
+      "casa": "Câmara",
+      "tipo": "PL",
+      "numero": "5988",
+      "ano": "2026",
+      "ementa": "Altera a Lei nº 12.965, de 23 de abril de 2014 (Marco Civil da Internet), para assegurar aos usuários de redes sociais e plataformas digitais o direito de escolher a manutenção dos algoritmos utilizados pelas referidas redes e plataformas, e dá outras providências.",
+      "data": "2026-11-26T08:26",
+      "situacao": "",
+      "url": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2660090",
+      "api": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2660090"
+    },
+    {
+      "key": "senado:176610",
+      "id": "176610",
+      "origem": "senado",
+      "casa": "Senado",
+      "tipo": "REQ",
+      "numero": "00424",
+      "ano": "2026",
+      "ementa": "Requer licença para desempenhar missão oficial, a fim de participar das atividades de marco de agenda, da Cúpula do Mercosul; e das Reuniões no âmbito do Parlasul, em Montevidéu, Uruguai.",
+      "data": "2026-11-26",
+      "situacao": "",
+      "url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/176610"
+    }
+  ],
   "votacoes": [],
   "eventos": [
     {
@@ -33,21 +75,21 @@
       "origem": "camara"
     },
     {
-      "id": 83212,
-      "data": "2026-11-26T09:00",
-      "descricao": "Problemas na prestação de serviços de fornecimento de energia elétrica pela ENERGISA em Mato Grosso do Sul\r\n <p></p><p>(Em atendimento ao REQ 68/2026 CME, do deputado Beto Pereira)</p><p></p><p>Participantes:</p><p></p><ol><li><p>Frederico de Araújo Teles, Diretor do Departamento de Políticas Setoriais da Secretaria Nacional de Energia Elétrica do Ministério de Minas e Energia;  (CONFIRMADO)</p></li><li><p>Jaqueline Godoy, Gerente de Fiscalização da Distribuição da Agência Nacional de Energia Elétrica - ANEEL;&nbsp;(CONFIRMADA)</p></li><li><p>Artur Rocha Gandra, Gerente de Operação e Distribuição da ENERGISA Mato Grosso do Sul; (CONFIRMADO)</p></li><li><p>Pedro Caravina, Deputado Estadual do Mato Grosso do Sul; (CONFIRMADO)</p></li><li><p>Representante do Ministério Público do Mato Grosso do Sul;</p></li><li><p>Ricardo Brandão, Diretor-Executivo de Regulação da Representante da Associação Brasileira de Distribuidores de Energia Elétrica - ABRADEE; (CONFIRMADO)</p></li><li><p>Carlos Alberto de Assis, Presidente da Agência Estadual de Regulação de Serviços Públicos de Mato Grosso do Sul - AGEMS; (CONFIRMADO)</p></li><li><p>Francisco Ferreira da Silva , Presidente do Sindicato dos Trabalhadores na Indústria de Energia Elétrica de Mato Grosso do Sul - Sinergia/MS; (CONFIRMADO)</p></li><li><p>Tamiris Azoia de Souza, Coordenadora do Departamento Técnico da Federação da Agricultura e Pecuária de Mato Grosso do Sul - FAMASUL; (CONFIRMADA)</p></li><li><p><span style=\"font-size: 12pt; font-family: Arial, sans-serif;\">Maria Alice Guarnieri. – Gerente de Gestão e Negócios</span> da Federação das Indústrias do Estado de Mato Grosso do Sul - FIEMS; (CONFIRMADA)</p></li><li><p>Zeony Candido Martins, Presidente do Sindicato do Comércio Varejista de Aquidauana, Conselheiro do Sesc-MS e representante da Federação do Comércio de Bens, Serviços e Turismo do Mato Grosso do Sul - Fecomércio/MS; (CONFIRMADO)</p></li><li><p>Patricia Mara da Silva, Superintendente da Orientação e Defesa do Consumidor de Mato Grosso do Sul - Procon/MS. &nbsp;(CONFIRMADA)</p></li></ol><p></p>",
-      "situacao": "Convocada",
-      "local": "Anexo II, Plenário 14",
-      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83212",
-      "origem": "camara"
-    },
-    {
       "id": 83374,
       "data": "2026-11-26T09:00",
-      "descricao": "Debater a capilarização da rede de proteção à infância: conselhos tutelares, creas e delegacias especializadas de proteção à criança e ao adolescente\r\n Audiência Pública\r\n\r\nTema: Debater a capilarização da Rede de Proteção à Infância: Conselhos Tutelares, CREAS e Delegacias Especializadas de Proteção à Criança e ao Adolescente.\r\n\r\nConvidados: \r\n\r\nDAVID ANTÔNIO RODRIGUES DE SALE, Vice-Presidente do Fórum Colegiado Nacional dos Conselheiros Tutelares (FCNCT) - (confirmado) \r\n\r\nVANDECLEYA MORO, Diretora do Colegiado Nacional de Gestores Municipais de Assistência Social – CONGEMAS - (confirmada)\r\n\r\nMÁRCIO RODRIGO GUTIÉRREZ ROCHA, Presidente do Conselho Nacional da Polícia Civil (CNPC) - (a confirmar)\r\n\r\nCLÍVIA FERREIRA VALENTE, Delegada da Delegacia Especializada de Proteção à Criança e ao Adolescente do Amapá - (a confirmar)\r\n\r\nSTEPHANIE ALMEIDA ARAÚJO, Delegada Delegacia Especializada de Proteção à Criança e ao Adolescente - Pernambuco - (confirmada)\r\n\r\nANNE KARINE SANCHES TREVIZAN DUARTE, Delegada da Delegacia Especializada de Proteção à Criança e ao Adolescente de Mato Grosso do Sul - (confirmada)\r\n\r\nANDRÉ CIARDULLO MOCCIARO, Diretor de Divisão da Delegacia Especializada de Proteção à Criança e ao Adolescente do Rio Grande de Sul - (confirmado)\r\n\r\nMARIA LUIZA MACHADO,  Delegada da Delegacia Especializada de Proteção à Criança e ao Adolescente do Rio de Janeiro (confirmada)\r\n\r\n(Requerimento nº 29/2026, do Dep. Fernando Rodolfo)",
+      "descricao": "Debater a capilarização da rede de proteção à infância: conselhos tutelares, creas e delegacias especializadas de proteção à criança e ao adolescente\r\n Audiência Pública\r\n\r\nTema: Debater a capilarização da Rede de Proteção à Infância: Conselhos Tutelares, CREAS e Delegacias Especializadas de Proteção à Criança e ao Adolescente.\r\n\r\nConvidados: \r\n\r\nDAVID ANTÔNIO RODRIGUES DE SALE, Vice-Presidente do Fórum Colegiado Nacional dos Conselheiros Tutelares (FCNCT) - (confirmado) \r\n\r\nVANDECLEYA MORO, Diretora do Colegiado Nacional de Gestores Municipais de Assistência Social – CONGEMAS - (confirmada)\r\n\r\nMÁRCIO RODRIGO GUTIÉRREZ ROCHA, Presidente do Conselho Nacional da Polícia Civil (CNPC) - (a confirmar)\r\n\r\nCLÍVIA FERREIRA VALENTE, Delegada da Delegacia Especializada de Proteção à Criança e ao Adolescente do Amapá - (a confirmar)\r\n\r\nSTEPHANIE ALMEIDA ARAÚJO, Delegada Delegacia Especializada de Proteção à Criança e ao Adolescente - Pernambuco - (confirmada)\r\n\r\nANNE KARINE SANCHES TREVIZAN DUARTE, Delegada da Delegacia Especializada de Proteção à Criança e ao Adolescente de Mato Grosso do Sul - (confirmada)\r\n\r\nANDRÉ CIARDULLO MOCCIARO, Diretor de Divisão da Delegacia Especializada de Proteção à Criança e ao Adolescente do Rio Grande de Sul - (confirmado)\r\n\r\nMARIA LUIZA MACHADO,  Delegada da Delegacia Especializada de Proteção à Criança e ao Adolescente do Rio de Janeiro (confirmada)\r\n\r\n(Requerimento nº 29/2026, do Dep. Fernando Rodolfo)\r\n1) DAVID ANTÔNIO RODRIGUES DE SALE (Confirmado)\r\n   Vice-Presidente\r\n   Fórum Colegiado Nacional dos Conselheiros Tutelares - FCNCT\r\n\r\n2) VANDECLEYA MORO (Confirmada)\r\n   Diretora\r\n   Colegiado Nacional de Gestores Municipais de Assistência Social - CONGEMAS\r\n\r\n3) STEPHANIE ALMEIDA ARAÚJO (Confirmada)\r\n   Delegada\r\n   Delegacia Especializada de Proteção à Criança e ao Adolescente - Pernambuco\r\n\r\n4) ANNE KARINE SANCHES TREVIZAN DUARTE (Confirmada)\r\n   Delegada\r\n   Delegacia Especializada de Proteção à Criança e ao Adolescente - Mato Grosso do Sul\r\n\r\n5) ANDRÉ CIARDULLO MOCCIARO (Confirmado)\r\n   Diretor\r\n   Delegacia Especializada de Proteção à Criança e ao Adolescente - Rio Grande do Sul\r\n\r\n6) MARIA LUÍZA MACHADO (Confirmada)\r\n   Delegada\r\n   Delegacia Especializada de Proteção à Criança e ao Adolescente - Rio de Janeiro",
       "situacao": "Convocada",
       "local": "Anexo II, Plenário 10",
       "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83374",
+      "origem": "camara"
+    },
+    {
+      "id": 83212,
+      "data": "2026-11-26T09:16",
+      "descricao": "Problemas na prestação de serviços de fornecimento de energia elétrica pela ENERGISA em Mato Grosso do Sul\r\n <p></p><p>(Em atendimento ao REQ 68/2026 CME, do deputado Beto Pereira)</p><p></p><p>Participantes:</p><p></p><ol><li><p>Frederico de Araújo Teles, Diretor do Departamento de Políticas Setoriais da Secretaria Nacional de Energia Elétrica do Ministério de Minas e Energia; (CONFIRMADO)<br></p></li><li><p>Jaqueline Godoy, Gerente de Fiscalização da Distribuição da Agência Nacional de Energia Elétrica - ANEEL;&nbsp;(CONFIRMADA)<br></p></li><li><p>Artur Rocha Gandra, Gerente de Operação e Distribuição da ENERGISA Mato Grosso do Sul; (CONFIRMADO)<br></p></li><li><p>Pedro Caravina, Deputado Estadual do Mato Grosso do Sul; (CONFIRMADO)<br></p></li><li><p>Representante do Ministério Público do Mato Grosso do Sul;<br></p></li><li><p>Ricardo Brandão, Diretor-Executivo de Regulação da Representante da Associação Brasileira de Distribuidores de Energia Elétrica - ABRADEE; (CONFIRMADO)<br></p></li><li><p>Carlos Alberto de Assis, Presidente da Agência Estadual de Regulação de Serviços Públicos de Mato Grosso do Sul - AGEMS; (CONFIRMADO)<br></p></li><li><p>Francisco Ferreira da Silva , Presidente do Sindicato dos Trabalhadores na Indústria de Energia Elétrica de Mato Grosso do Sul - Sinergia/MS; (CONFIRMADO)<br></p></li><li><p>Tamiris Azoia de Souza, Coordenadora do Departamento Técnico da Federação da Agricultura e Pecuária de Mato Grosso do Sul - FAMASUL; (CONFIRMADA)<br></p></li><li><p><span style=\"font-size: 12pt; font-family: Arial, sans-serif;\">Maria Alice Guarnieri. – Gerente de Gestão e Negócios</span> da Federação das Indústrias do Estado de Mato Grosso do Sul - FIEMS; (CONFIRMADA)<br></p></li><li><p>Zeony Candido Martins, Presidente do Sindicato do Comércio Varejista de Aquidauana, Conselheiro do Sesc-MS e representante da Federação do Comércio de Bens, Serviços e Turismo do Mato Grosso do Sul - Fecomércio/MS; (CONFIRMADO)<br></p></li><li><p>Patricia Mara da Silva, Superintendente da Orientação e Defesa do Consumidor de Mato Grosso do Sul - Procon/MS. &nbsp;(CONFIRMADA)</p></li></ol><p></p>",
+      "situacao": "Em Andamento",
+      "local": "Anexo II, Plenário 14",
+      "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83212",
       "origem": "camara"
     },
     {
@@ -98,7 +140,7 @@
     {
       "id": 83220,
       "data": "2026-11-26T14:30",
-      "descricao": "Processo de estruturação da nova concessão da BR-393/RJ: investimentos previstos, obras programadas, cronograma, política tarifária, localização das futuras praças de pedágio, impactos nos municípios.\r\n <p><strong>Convidados:&nbsp;</strong></p><p></p><p>. GUILHERME THEO RODRIGUES DA ROCHA SAMPAIO, Diretor-Geral da Agência Nacional de Transportes Terrestres - ANTT;</p><p></p><p>. MARCELO CARDOSO FONSECA, Superintendente de Concessão da Infraestrutura da Agência Nacional de Transportes Terrestres - ANTT, responsável pelo projeto de concessão da BR-393 na ANTT;</p><p></p><p>. ANTÔNIO FERNANDO SOUZA OLIVEIRA, Diretor-Geral da Polícia Rodoviária Federal - PRF;&nbsp;</p><p></p><p>. ANTONIO FRANCISCO NETO, Prefeito de Volta Redonda - RJ;</p><p></p><p>. KATIA CRISTINA MIKI DA SILVA, Prefeita de Barra do Piraí - RJ;</p><p></p><p>. ROSILANE PIVETI SILVA, Prefeita de Vassouras - RJ; (Confirmada)</p><p></p><p>. JULIO DE SOUZA BERNARDES, Prefeito de Paraíba do Sul - RJ;</p><p></p><p>. MARCO ANTÔNIO DE ALMEIDA, Secretário de Obras, e PAULO AFONSO, Secretário de Transportes do município de Rio das Flores - RJ; (Confirmados)</p><p></p><p>. JONAS MASCARENHAS MACEDO, Prefeito de Três Rios - RJ;</p><p></p><p>. BRENO JOSÉ DE SOUZA JUNQUEIRA, Prefeito de Sapucaia - RJ;</p><p></p><p>. MÁRCIO FORTES DE ALMEIDA, Diretor de Relações Institucionais da Federação das Indústrias do Estado do Rio de Janeiro - FIRJAN; (Confirmado)</p><p></p><p>&nbsp;. DELMO PINHO, Assessor da Presidência da Federação do Comércio de Bens, Serviços e Turismo do Estado do Rio de Janeiro - Fecomércio-RJ. (Confirmado)</p><p></p><p></p><p></p><p>. GEORGE SANTORO, Ministro de Estado dos Transportes, ou representante por ele designado; (não participará)</p><p></p><p>. VIVIANE ESSE, Secretária Nacional de Transporte Rodoviário do Ministério dos Transportes; (não participará)</p><p></p><p>. FABRÍCIO GALVAO - Diretor-Geral do Departamento Nacional de Infraestrutura de Transportes – DNIT; (não participará)</p><p></p><p>. PAULO GONET, Procurador-Geral da República, ou representante do Ministério Público Federal. (não participará)</p><p></p><p></p>",
+      "descricao": "Processo de estruturação da nova concessão da BR-393/RJ: investimentos previstos, obras programadas, cronograma, política tarifária, localização das futuras praças de pedágio, impactos nos municípios.\r\n <p><strong>Convidados:&nbsp;</strong></p><p></p><p>. VIVIANE ESSE, Secretária Nacional de Transporte Rodoviário do Ministério dos Transportes; (Confirmada)</p><p></p><p>. GUILHERME THEO RODRIGUES DA ROCHA SAMPAIO, Diretor-Geral da Agência Nacional de Transportes Terrestres - ANTT;</p><p></p><p>. MARCELO CARDOSO FONSECA, Superintendente de Concessão da Infraestrutura da Agência Nacional de Transportes Terrestres - ANTT, responsável pelo projeto de concessão da BR-393 na ANTT;</p><p></p><p>. ANTÔNIO FERNANDO SOUZA OLIVEIRA, Diretor-Geral da Polícia Rodoviária Federal - PRF;&nbsp;</p><p></p><p>. ANTONIO FRANCISCO NETO, Prefeito de Volta Redonda - RJ;</p><p></p><p>. KATIA CRISTINA MIKI DA SILVA, Prefeita de Barra do Piraí - RJ;</p><p></p><p>. ROSILANE PIVETI SILVA, Prefeita de Vassouras - RJ; (Confirmada)</p><p></p><p>. JULIO DE SOUZA BERNARDES, Prefeito de Paraíba do Sul - RJ;</p><p></p><p>. MARCO ANTÔNIO DE ALMEIDA, Secretário de Obras, e PAULO AFONSO, Secretário de Transportes do município de Rio das Flores - RJ; (Confirmados)</p><p></p><p>. JONAS MASCARENHAS MACEDO, Prefeito de Três Rios - RJ;</p><p></p><p>. BRENO JOSÉ DE SOUZA JUNQUEIRA, Prefeito de Sapucaia - RJ;</p><p></p><p>. MÁRCIO FORTES DE ALMEIDA, Diretor de Relações Institucionais da Federação das Indústrias do Estado do Rio de Janeiro - FIRJAN; (Confirmado)</p><p></p><p>&nbsp;. DELMO PINHO, Assessor da Presidência da Federação do Comércio de Bens, Serviços e Turismo do Estado do Rio de Janeiro - Fecomércio-RJ. (Confirmado)</p><p></p><p></p><p></p><p>. GEORGE SANTORO, Ministro de Estado dos Transportes, ou representante por ele designado; (não participará)</p><p></p><p>. FABRÍCIO GALVAO - Diretor-Geral do Departamento Nacional de Infraestrutura de Transportes – DNIT; (não participará)</p><p></p><p>. PAULO GONET, Procurador-Geral da República, ou representante do Ministério Público Federal. (não participará)</p><p></p><p></p>",
       "situacao": "Convocada",
       "local": "",
       "url": "https://dadosabertos.camara.leg.br/api/v2/eventos/83220",
